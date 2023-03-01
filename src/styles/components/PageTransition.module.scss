@@ -1,0 +1,54 @@
+.curtain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: #000;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 1rem;
+
+  &Content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+  }
+
+  svg {
+    animation: rotate 3s linear infinite;
+
+    * {
+      fill: var(--accent-color) !important;
+    }
+  }
+
+  span {
+    font-family: 'PT Mono';
+    font-size: 14px;
+  }
+
+  &Shadow {
+    @extend .curtain;
+    background-color: var(--accent-color);
+    z-index: 19;
+    width: 100%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

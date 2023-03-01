@@ -1,0 +1,30 @@
+.star {
+  --size: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 21;
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 30;
+
+  * {
+    fill: var(--background-color);
+  }
+}
+
+.bubble {
+  --size: 1000px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0;
+
+  * {
+    fill: var(--accent-color);
+  }
+}

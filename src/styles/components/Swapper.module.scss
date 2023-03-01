@@ -1,0 +1,25 @@
+.swapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95px;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+
+  span {
+    font-weight: 400;
+    text-align: center;
+    font-size: 70px;
+    line-height: 80px;
+    position: relative;
+    text-decoration: solid;
+    width: fit-content;
+    height: 100px;
+    padding-top: 12px;
+    position: absolute;
+    white-space: nowrap;
+    padding-inline: 1rem;
+  }
+}
