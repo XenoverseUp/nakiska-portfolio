@@ -1,10 +1,8 @@
 import styles from '@sc/IntroAnimation.module.scss'
 import cx from 'cx'
 import wait from '../utils/wait'
-import { ReactComponent as Star } from 'assets/svg/Star.svg'
-import { ReactComponent as Oval } from 'assets/svg/Oval.svg'
 import { Fragment, useLayoutEffect } from 'react'
-import { BubblePaths, StarPaths } from 'components/Paths'
+import Paths from 'components/Paths'
 import { bubbleTimeline, starTimeline } from 'animations/introAnimations'
 import { removeLoader, animateLoader } from 'animations/loaderAnimations'
 
@@ -33,8 +31,8 @@ const IntroAnimation = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M18.2952 20.9045C0.393887 20.445 -6.1966 44.2426 9.39077 53.0575C-2.12973 66.7668 12.3669 86.757 28.9772 80.0663C32.5127 97.621 57.1801 98.7508 62.3055 81.5928C78.2346 89.7738 94.4978 71.1924 84.2787 56.4874C100.607 49.1343 96.219 24.8339 78.3507 23.6551C82.782 6.3048 61.0476 -5.41591 48.9852 7.81916C38.1832 -6.46312 15.4684 3.22181 18.2952 20.9045Z"
             />
           </svg>
@@ -53,8 +51,7 @@ const IntroAnimation = () => {
           </svg>
         </Fragment>
       ))}
-      <StarPaths />
-      <BubblePaths />
+      <Paths />
     </div>
   )
 }

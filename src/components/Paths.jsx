@@ -1,11 +1,12 @@
 import styles from '@sc/Paths.module.scss'
+import cx from 'cx'
 
-export const BubblePaths = () => (
+const Paths = () => (
   <svg
     viewBox="0 0 1440 810"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={styles.motionPath}
+    className={cx(styles.motionPath, styles.bubblePath)}
     preserveAspectRatio="none"
   >
     <path
@@ -50,17 +51,6 @@ export const BubblePaths = () => (
       stroke="white"
       strokeWidth="4"
     />
-  </svg>
-)
-
-export const StarPaths = () => (
-  <svg
-    viewBox="0 0 1440 810"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={styles.motionPath}
-    preserveAspectRatio="none"
-  >
     <path
       id="star-path-0"
       d="M1097.18 621C1224.5 756 1141.5 837 1073 932.5"
@@ -105,3 +95,5 @@ export const StarPaths = () => (
     />
   </svg>
 )
+
+export default Paths
