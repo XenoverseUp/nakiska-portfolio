@@ -8,7 +8,7 @@ const PageTransition = forwardRef(
     <div ref={ref} aria-hidden="true">
       <div ref={curtain} id="curtain" className={styles.curtain}>
         <div className={styles.curtainContent}>
-          <Star fill="red" />
+          <Star width={60} height={59} />
           <span>Nakiska Skaikh</span>
         </div>
       </div>

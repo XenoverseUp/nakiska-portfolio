@@ -5,7 +5,6 @@ gsap.registerPlugin(MotionPathPlugin)
 
 export const starTimeline = (star, starPath) => {
   gsap.set(star, {
-    transformOrigin: '50% 50%',
     xPercent: -50,
     yPercent: -50,
     opacity: 1,
