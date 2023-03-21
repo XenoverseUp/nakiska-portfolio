@@ -13,7 +13,9 @@ $star-paths: 'M1097.18 621C1224.5 756 1141.5 837 1073 932.5',
   left: 0;
   z-index: 21;
   width: var(--size);
+  min-width: 650px;
   height: var(--size);
+  min-height: 650px;
   pointer-events: none;
   aspect-ratio: 1 / 1;
   // opacity: 0;

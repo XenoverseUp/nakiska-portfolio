@@ -31,10 +31,60 @@ const IntroAnimation = () => {
       // }
     })()
 
+    // STAR 0
+
     gsap.set('#star-0', {
       xPercent: -50,
       yPercent: -50,
-      '--size': 650, //'clamp(200px, 40%, 400px);',
+      '--size': '50vw', //'clamp(200px, 40%, 400px);',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-1', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '50vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-2', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '50vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-3', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '50vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-4', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '50vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-5', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '50vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-6', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '70vw',
 
       opacity: 1,
     })
@@ -57,13 +107,7 @@ const IntroAnimation = () => {
         display: 'none',
       })
 
-    gsap.set('#star-1', {
-      xPercent: -50,
-      yPercent: -50,
-      '--size': 650,
-
-      opacity: 1,
-    })
+    // STAR 1
 
     gsap
       .timeline()
@@ -85,13 +129,7 @@ const IntroAnimation = () => {
         display: 'none',
       })
 
-    gsap.set('#star-2', {
-      xPercent: -50,
-      yPercent: -50,
-      '--size': 650,
-
-      opacity: 1,
-    })
+    // STAR 2
 
     gsap
       .timeline()
@@ -111,18 +149,12 @@ const IntroAnimation = () => {
         display: 'none',
       })
 
-    gsap.set('#star-3', {
-      xPercent: -50,
-      yPercent: -50,
-      '--size': 650,
-
-      opacity: 1,
-    })
+    // STAR 3
 
     gsap
       .timeline()
       .to('#star-3', {
-        duration: 4.5,
+        duration: 5.5,
         motionPath: {
           path: '#star-path-3',
           align: '#star-path-3',
@@ -139,13 +171,7 @@ const IntroAnimation = () => {
         display: 'none',
       })
 
-    gsap.set('#star-4', {
-      xPercent: -50,
-      yPercent: -50,
-      '--size': 650,
-
-      opacity: 1,
-    })
+    // STAR 4
 
     gsap
       .timeline()
@@ -167,11 +193,55 @@ const IntroAnimation = () => {
       .set('#star-4', {
         display: 'none',
       })
+
+    // STAR 5
+
+    gsap
+      .timeline()
+      .to('#star-5', {
+        duration: 5.5,
+        motionPath: {
+          path: '#star-path-5',
+          align: '#star-path-5',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+
+        keyframes: {
+          scale: [1, 0.5, 0.3, 0.1],
+        },
+        immediateRender: true,
+        ease: Power2.easeInOut,
+      })
+      .set('#star-5', {
+        display: 'none',
+      })
+
+    // STAR 6
+
+    gsap
+      .timeline()
+      .to('#star-6', {
+        duration: 4,
+        motionPath: {
+          path: '#star-path-6',
+          align: '#star-path-6',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+
+        scale: 0,
+        immediateRender: true,
+        ease: Power2.easeInOut,
+      })
+      .set('#star-6', {
+        display: 'none',
+      })
   }, [])
 
   return (
     <div>
-      {new Array(5).fill(null).map((_, i) => (
+      {new Array(7).fill(null).map((_, i) => (
         <Fragment key={`star-${i}`}>
           <svg
             className={styles.star}
