@@ -92,7 +92,7 @@ const IntroAnimation = () => {
     gsap.set('#star-7', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '70vw',
+      '--size': '71vw',
 
       opacity: 1,
     })
@@ -100,7 +100,7 @@ const IntroAnimation = () => {
     gsap.set('#star-8', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '60vw',
+      '--size': '63vw',
 
       opacity: 1,
     })
