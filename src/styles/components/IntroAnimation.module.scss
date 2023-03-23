@@ -23,7 +23,8 @@ $star-paths: 'M1097.18 621C1224.5 756 1141.5 837 1073 932.5',
 
   * {
     fill: var(--background-color);
-    fill: blue;
+    // fill: blue;
+    fill: var(--accent-color);
   }
 }
 

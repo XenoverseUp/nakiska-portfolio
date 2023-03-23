@@ -95,6 +95,18 @@ const Paths = () => (
       stroke="white"
       strokeWidth="4"
     />
+    <path
+      id="star-path-7"
+      d="M519.5 24C548.667 151.167 661.7 435 880.5 553C1154 700.5 1307 670.5 1433 882"
+      stroke="white"
+      strokeWidth="4"
+    />
+    <path
+      id="star-path-8"
+      d="M830.5 54C957.5 73.5 1226.3 166.3 1285.5 381.5C1344.7 596.7 1527.17 608.167 1611 587"
+      stroke="white"
+      strokeWidth="4"
+    />
   </svg>
 )
 

@@ -89,6 +89,22 @@ const IntroAnimation = () => {
       opacity: 1,
     })
 
+    gsap.set('#star-7', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '70vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-8', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '60vw',
+
+      opacity: 1,
+    })
+
     gsap
       .timeline()
       .to('#star-0', {
@@ -103,7 +119,7 @@ const IntroAnimation = () => {
         immediateRender: true,
         ease: Power4.easeInOut,
       })
-      .set('#star-1', {
+      .set('#star-0', {
         display: 'none',
       })
 
@@ -237,11 +253,67 @@ const IntroAnimation = () => {
       .set('#star-6', {
         display: 'none',
       })
+
+    // STAR 7
+
+    gsap
+      .timeline()
+      .to('#star-7', {
+        duration: 4.5,
+        motionPath: {
+          path: '#star-path-7',
+          align: '#star-path-7',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+
+        scale: 0,
+        immediateRender: true,
+        ease: Power3.easeInOut,
+      })
+      .set('#star-7', {
+        display: 'none',
+      })
+
+    // STAR 8
+
+    gsap
+      .timeline()
+      .to('#star-8', {
+        duration: 4.5,
+        motionPath: {
+          path: '#star-path-8',
+          align: '#star-path-8',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+
+        scale: 0,
+        immediateRender: true,
+        ease: Power3.easeInOut,
+      })
+      .set('#star-8', {
+        display: 'none',
+      })
   }, [])
 
   return (
     <div>
-      {new Array(7).fill(null).map((_, i) => (
+      {new Array(9).fill(null).map((_, i) => (
+        <svg
+          key={`bubble-${i}`}
+          id={`bubble-${i}`}
+          className={styles.bubble}
+          width="145"
+          height="145"
+          viewBox="0 0 145 145"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="72.5" cy="72.5" r="72.5" fill="#FF4B36" />
+        </svg>
+      ))}
+      {new Array(9).fill(null).map((_, i) => (
         <Fragment key={`star-${i}`}>
           <svg
             className={styles.star}
@@ -255,19 +327,6 @@ const IntroAnimation = () => {
               clipRule="evenodd"
               d="M18.2952 20.9045C0.393887 20.445 -6.1966 44.2426 9.39077 53.0575C-2.12973 66.7668 12.3669 86.757 28.9772 80.0663C32.5127 97.621 57.1801 98.7508 62.3055 81.5928C78.2346 89.7738 94.4978 71.1924 84.2787 56.4874C100.607 49.1343 96.219 24.8339 78.3507 23.6551C82.782 6.3048 61.0476 -5.41591 48.9852 7.81916C38.1832 -6.46312 15.4684 3.22181 18.2952 20.9045Z"
             />
-          </svg>
-
-          <svg
-            key={`bubble-${i}`}
-            id={`bubble-${i}`}
-            className={styles.bubble}
-            width="145"
-            height="145"
-            viewBox="0 0 145 145"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="72.5" cy="72.5" r="72.5" fill="#FF4B36" />
           </svg>
         </Fragment>
       ))}
