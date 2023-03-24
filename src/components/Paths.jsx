@@ -27,16 +27,15 @@ const Paths = () => (
       stroke="white"
       strokeWidth="4"
     />
-
     <path
       id="bubble-path-3"
-      d="M1385 485C1352 596 1165.67 734.333 1146 730"
+      d="M680 373.5C636.667 453.167 507.6 607.1 338 585.5C168.4 563.9 244 886.833 185 1041"
       stroke="white"
       strokeWidth="4"
     />
     <path
       id="bubble-path-4"
-      d="M994.5 800C962 705.667 503.5 583.5 503.5 406"
+      d="M1320.5 83C1195.83 115.167 735.4 -59 749 61C766 211 1246.5 447.5 980.5 893"
       stroke="white"
       strokeWidth="4"
     />
