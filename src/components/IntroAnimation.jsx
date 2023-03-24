@@ -351,13 +351,13 @@ const IntroAnimation = () => {
       '--size': '46vw',
     })
 
-    gsap.set('#bubble-4', {
-      transformOrigin: '50% 50%',
-      xPercent: -50,
-      yPercent: -50,
-      opacity: 1,
-      '--size': '27.5vw',
-    })
+    // gsap.set('#bubble-4', {
+    //   transformOrigin: '50% 50%',
+    //   xPercent: -50,
+    //   yPercent: -50,
+    //   opacity: 1,
+    //   '--size': '27.5vw',
+    // })
 
     gsap
       .timeline()
@@ -435,29 +435,29 @@ const IntroAnimation = () => {
         display: 'none',
       })
 
-    gsap
-      .timeline()
-      .to('#bubble-4', {
-        duration: 3,
-        delay: 1,
-        motionPath: {
-          path: '#bubble-path-4',
-          align: '#bubble-path-4',
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5],
-        },
-        scale: 0.2,
-        immediateRender: true,
-        ease: Power2.easeIn,
-      })
-      .set('#bubble-4', {
-        display: 'none',
-      })
+    // gsap
+    //   .timeline()
+    //   .to('#bubble-4', {
+    //     duration: 3,
+    //     delay: 1,
+    //     motionPath: {
+    //       path: '#bubble-path-4',
+    //       align: '#bubble-path-4',
+    //       autoRotate: true,
+    //       alignOrigin: [0.5, 0.5],
+    //     },
+    //     scale: 0.2,
+    //     immediateRender: true,
+    //     ease: Power2.easeIn,
+    //   })
+    //   .set('#bubble-4', {
+    //     display: 'none',
+    //   })
   }, [])
 
   return (
     <div>
-      {new Array(5).fill(null).map((_, i) => (
+      {new Array(4).fill(null).map((_, i) => (
         <svg
           key={`bubble-${i}`}
           id={`bubble-${i}`}
