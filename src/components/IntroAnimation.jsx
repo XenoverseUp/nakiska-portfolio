@@ -382,7 +382,7 @@ const IntroAnimation = () => {
       .timeline()
       .to('#bubble-1', {
         duration: 5.5,
-        delay: 0.4,
+        delay: 0.3,
         motionPath: {
           path: '#bubble-path-1',
           align: '#bubble-path-1',
