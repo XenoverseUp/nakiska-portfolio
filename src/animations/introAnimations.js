@@ -69,7 +69,7 @@ export const bubbleTimeline = (bubble, bubblePath) => {
     .timeline({ paused: true })
     .to(bubble, {
       delay: 0.25,
-      duration: 2.75,
+      duration: 6,
       motionPath: {
         path: bubblePath,
         align: bubblePath,

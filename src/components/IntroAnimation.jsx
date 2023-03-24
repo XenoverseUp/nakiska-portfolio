@@ -25,10 +25,6 @@ const IntroAnimation = () => {
       // animateLoader()
       // await wait(2000)
       // removeLoader()
-      // for (let i = 0; i < 7; i++) {
-      //   starTimeline(`#star-${i}`, `#star-path-${i}`).play()
-      //   bubbleTimeline(`#bubble-${i}`, `#bubble-path-${i}`).play()
-      // }
     })()
 
     // STAR 0
@@ -98,6 +94,14 @@ const IntroAnimation = () => {
     })
 
     gsap.set('#star-8', {
+      xPercent: -50,
+      yPercent: -50,
+      '--size': '63vw',
+
+      opacity: 1,
+    })
+
+    gsap.set('#star-9', {
       xPercent: -50,
       yPercent: -50,
       '--size': '63vw',
@@ -295,15 +299,115 @@ const IntroAnimation = () => {
       .set('#star-8', {
         display: 'none',
       })
+
+    gsap
+      .timeline()
+      .to('#star-9', {
+        duration: 4.5,
+        motionPath: {
+          path: '#star-path-9',
+          align: '#star-path-9',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+
+        scale: 0,
+        immediateRender: true,
+        ease: Power3.easeInOut,
+      })
+      .set('#star-9', {
+        display: 'none',
+      })
+
+    gsap.set('#bubble-0', {
+      transformOrigin: '50% 50%',
+      xPercent: -50,
+      yPercent: -50,
+      opacity: 1,
+      '--size': '40vw',
+    })
+
+    gsap.set('#bubble-1', {
+      transformOrigin: '50% 50%',
+      xPercent: -50,
+      yPercent: -50,
+      opacity: 1,
+      '--size': '51vw',
+    })
+
+    gsap.set('#bubble-2', {
+      transformOrigin: '50% 50%',
+      xPercent: -50,
+      yPercent: -50,
+      opacity: 1,
+      '--size': '46vw',
+    })
+
+    gsap
+      .timeline()
+      .to('#bubble-0', {
+        duration: 5.5,
+        delay: 0.4,
+        motionPath: {
+          path: '#bubble-path-0',
+          align: '#bubble-path-0',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+        scale: 0.2,
+        immediateRender: true,
+        ease: Power3.easeInOut,
+      })
+      .set('#bubble-0', {
+        display: 'none',
+      })
+
+    gsap
+      .timeline()
+      .to('#bubble-1', {
+        duration: 5.5,
+        delay: 0.4,
+        motionPath: {
+          path: '#bubble-path-1',
+          align: '#bubble-path-1',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+        scale: 0.05,
+        immediateRender: true,
+        ease: Power4.easeInOut,
+      })
+      .set('#bubble-1', {
+        display: 'none',
+      })
+
+    gsap
+      .timeline()
+      .to('#bubble-2', {
+        duration: 6,
+        delay: 0.1,
+        motionPath: {
+          path: '#bubble-path-2',
+          align: '#bubble-path-2',
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+        scale: 0.2,
+        immediateRender: true,
+        ease: Power3.easeInOut,
+      })
+      .set('#bubble-2', {
+        display: 'none',
+      })
   }, [])
 
   return (
     <div>
-      {new Array(9).fill(null).map((_, i) => (
+      {new Array(7).fill(null).map((_, i) => (
         <svg
           key={`bubble-${i}`}
           id={`bubble-${i}`}
-          className={styles.bubble}
+          className={cx('bubble', styles.bubble)}
           width="145"
           height="145"
           viewBox="0 0 145 145"
@@ -313,7 +417,7 @@ const IntroAnimation = () => {
           <circle cx="72.5" cy="72.5" r="72.5" fill="#FF4B36" />
         </svg>
       ))}
-      {new Array(9).fill(null).map((_, i) => (
+      {new Array(10).fill(null).map((_, i) => (
         <Fragment key={`star-${i}`}>
           <svg
             className={styles.star}
