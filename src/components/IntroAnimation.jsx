@@ -32,7 +32,7 @@ const IntroAnimation = () => {
     gsap.set('#star-0', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '50vw', //'clamp(200px, 40%, 400px);',
+      '--size': '51vw', //'clamp(200px, 40%, 400px);',
 
       opacity: 1,
     })
@@ -40,7 +40,7 @@ const IntroAnimation = () => {
     gsap.set('#star-1', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '50vw',
+      '--size': '53vw',
 
       opacity: 1,
     })
@@ -48,7 +48,7 @@ const IntroAnimation = () => {
     gsap.set('#star-2', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '50vw',
+      '--size': '53vw',
 
       opacity: 1,
     })
@@ -56,7 +56,7 @@ const IntroAnimation = () => {
     gsap.set('#star-3', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '50vw',
+      '--size': '53vw',
 
       opacity: 1,
     })
@@ -64,7 +64,7 @@ const IntroAnimation = () => {
     gsap.set('#star-4', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '50vw',
+      '--size': '53vw',
 
       opacity: 1,
     })
@@ -72,7 +72,7 @@ const IntroAnimation = () => {
     gsap.set('#star-5', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '50vw',
+      '--size': '53vw',
 
       opacity: 1,
     })
@@ -80,7 +80,7 @@ const IntroAnimation = () => {
     gsap.set('#star-6', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '70vw',
+      '--size': '73vw',
 
       opacity: 1,
     })
@@ -88,7 +88,7 @@ const IntroAnimation = () => {
     gsap.set('#star-7', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '71vw',
+      '--size': '74vw',
 
       opacity: 1,
     })
@@ -96,7 +96,7 @@ const IntroAnimation = () => {
     gsap.set('#star-8', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '63vw',
+      '--size': '66vw',
 
       opacity: 1,
     })
@@ -104,7 +104,7 @@ const IntroAnimation = () => {
     gsap.set('#star-9', {
       xPercent: -50,
       yPercent: -50,
-      '--size': '63vw',
+      '--size': '66vw',
 
       opacity: 1,
     })
@@ -112,7 +112,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-0', {
-        duration: 3.5,
+        delay: 1,
+        duration: 3.5 - 0.5,
         motionPath: {
           path: '#star-path-0',
           align: '#star-path-0',
@@ -121,7 +122,7 @@ const IntroAnimation = () => {
         },
         scale: 0.7,
         immediateRender: true,
-        ease: Power4.easeInOut,
+        ease: Power4.easeOut,
       })
       .set('#star-0', {
         display: 'none',
@@ -132,7 +133,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-1', {
-        duration: 5,
+        delay: 1,
+        duration: 5 - 0.5,
         motionPath: {
           path: '#star-path-1',
           align: '#star-path-1',
@@ -143,7 +145,7 @@ const IntroAnimation = () => {
           scale: [1, 0.8, 0.5, 0.2, 0.15],
         },
         immediateRender: true,
-        ease: Power4.easeInOut,
+        ease: Power4.easeOut,
       })
       .set('#star-1', {
         display: 'none',
@@ -154,7 +156,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-2', {
-        duration: 5,
+        delay: 1,
+        duration: 5 - 0.5,
         motionPath: {
           path: '#star-path-2',
           align: '#star-path-2',
@@ -163,7 +166,7 @@ const IntroAnimation = () => {
         },
         scale: 0.15,
         immediateRender: true,
-        ease: Power4.easeInOut,
+        ease: Power4.easeOut,
       })
       .set('#star-2', {
         display: 'none',
@@ -174,7 +177,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-3', {
-        duration: 5.5,
+        delay: 1,
+        duration: 5.5 - 0.5,
         motionPath: {
           path: '#star-path-3',
           align: '#star-path-3',
@@ -185,7 +189,7 @@ const IntroAnimation = () => {
           scale: [1, 1, 0.8, 0.5, 0.3, 0.1],
         },
         immediateRender: true,
-        ease: Power2.easeInOut,
+        ease: Power2.easeOut,
       })
       .set('#star-3', {
         display: 'none',
@@ -196,7 +200,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-4', {
-        duration: 5,
+        delay: 1,
+        duration: 5 - 0.5,
         motionPath: {
           path: '#star-path-4',
           align: '#star-path-4',
@@ -208,7 +213,7 @@ const IntroAnimation = () => {
           scale: [1, 1, 0.8, 0.5, 0.3, 0.1],
         },
         immediateRender: true,
-        ease: Power2.easeInOut,
+        ease: Power2.easeOut,
       })
       .set('#star-4', {
         display: 'none',
@@ -219,7 +224,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-5', {
-        duration: 5.5,
+        delay: 1,
+        duration: 5.5 - 0.5,
         motionPath: {
           path: '#star-path-5',
           align: '#star-path-5',
@@ -231,7 +237,7 @@ const IntroAnimation = () => {
           scale: [1, 0.5, 0.3, 0.1],
         },
         immediateRender: true,
-        ease: Power2.easeInOut,
+        ease: Power2.easeOut,
       })
       .set('#star-5', {
         display: 'none',
@@ -242,7 +248,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-6', {
-        duration: 4,
+        delay: 1,
+        duration: 4 - 0.5,
         motionPath: {
           path: '#star-path-6',
           align: '#star-path-6',
@@ -252,7 +259,7 @@ const IntroAnimation = () => {
 
         scale: 0,
         immediateRender: true,
-        ease: Power2.easeInOut,
+        ease: Power2.easeOut,
       })
       .set('#star-6', {
         display: 'none',
@@ -263,7 +270,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-7', {
-        duration: 4.5,
+        delay: 1,
+        duration: 4.5 - 0.5,
         motionPath: {
           path: '#star-path-7',
           align: '#star-path-7',
@@ -273,7 +281,7 @@ const IntroAnimation = () => {
 
         scale: 0,
         immediateRender: true,
-        ease: Power3.easeInOut,
+        ease: Power3.easeOut,
       })
       .set('#star-7', {
         display: 'none',
@@ -284,7 +292,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-8', {
-        duration: 4.5,
+        delay: 1,
+        duration: 4.5 - 0.5,
         motionPath: {
           path: '#star-path-8',
           align: '#star-path-8',
@@ -294,7 +303,7 @@ const IntroAnimation = () => {
 
         scale: 0,
         immediateRender: true,
-        ease: Power3.easeInOut,
+        ease: Power3.easeOut,
       })
       .set('#star-8', {
         display: 'none',
@@ -303,7 +312,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#star-9', {
-        duration: 4.5,
+        delay: 1,
+        duration: 4.5 - 0.5,
         motionPath: {
           path: '#star-path-9',
           align: '#star-path-9',
@@ -313,7 +323,7 @@ const IntroAnimation = () => {
 
         scale: 0,
         immediateRender: true,
-        ease: Power3.easeInOut,
+        ease: Power3.easeOut,
       })
       .set('#star-9', {
         display: 'none',
@@ -363,7 +373,7 @@ const IntroAnimation = () => {
       .timeline()
       .to('#bubble-0', {
         duration: 5.5,
-        delay: 0.4,
+        delay: 1.6,
         motionPath: {
           path: '#bubble-path-0',
           align: '#bubble-path-0',
@@ -372,7 +382,7 @@ const IntroAnimation = () => {
         },
         scale: 0.2,
         immediateRender: true,
-        ease: Power3.easeInOut,
+        ease: Power3.easeOut,
       })
       .set('#bubble-0', {
         display: 'none',
@@ -381,8 +391,8 @@ const IntroAnimation = () => {
     gsap
       .timeline()
       .to('#bubble-1', {
-        duration: 5.5,
-        delay: 0.3,
+        duration: 7,
+        delay: 1.5,
         motionPath: {
           path: '#bubble-path-1',
           align: '#bubble-path-1',
@@ -391,7 +401,7 @@ const IntroAnimation = () => {
         },
         scale: 0.05,
         immediateRender: true,
-        ease: Power4.easeInOut,
+        ease: Power4.easeOut,
       })
       .set('#bubble-1', {
         display: 'none',
@@ -401,7 +411,7 @@ const IntroAnimation = () => {
       .timeline()
       .to('#bubble-2', {
         duration: 6,
-        delay: 0.1,
+        delay: 1.3,
         motionPath: {
           path: '#bubble-path-2',
           align: '#bubble-path-2',
@@ -410,7 +420,7 @@ const IntroAnimation = () => {
         },
         scale: 0.2,
         immediateRender: true,
-        ease: Power3.easeInOut,
+        ease: Power3.easeOut,
       })
       .set('#bubble-2', {
         display: 'none',
@@ -420,7 +430,7 @@ const IntroAnimation = () => {
       .timeline()
       .to('#bubble-3', {
         duration: 6,
-        delay: 0.15,
+        delay: 1.35,
         motionPath: {
           path: '#bubble-path-3',
           align: '#bubble-path-3',
@@ -429,7 +439,7 @@ const IntroAnimation = () => {
         },
         scale: 0.2,
         immediateRender: true,
-        ease: Power3.easeInOut,
+        ease: Power3.easeOut,
       })
       .set('#bubble-3', {
         display: 'none',
@@ -438,7 +448,7 @@ const IntroAnimation = () => {
     // gsap
     //   .timeline()
     //   .to('#bubble-4', {
-    //     duration: 3,
+    //     duration: 3 - 0.5,
     //     delay: 1,
     //     motionPath: {
     //       path: '#bubble-path-4',
