@@ -399,7 +399,7 @@ const IntroAnimation = () => {
           autoRotate: true,
           alignOrigin: [0.5, 0.5],
         },
-        scale: 0.05,
+        scale: 0.01,
         immediateRender: true,
         ease: Power4.easeOut,
       })
