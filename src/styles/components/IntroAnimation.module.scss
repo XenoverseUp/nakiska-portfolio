@@ -16,7 +16,7 @@
   * {
     fill: var(--background-color);
     // fill: blue;
-    fill: var(--accent-color);
+    // fill: var(--accent-color);
   }
 }
 
@@ -30,7 +30,7 @@
   opacity: 0;
 
   * {
-    // fill: var(--accent-color);
-    fill: transparent;
+    fill: var(--accent-color);
+    // fill: transparent;
   }
 }
