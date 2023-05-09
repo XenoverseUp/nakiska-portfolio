@@ -52,6 +52,14 @@
   }
 }
 
+:global(.focus) {
+  &::after {
+    width: 100%;
+    left: 0;
+    right: unset;
+  }
+}
+
 .active {
   font-weight: bold;
   pointer-events: none;

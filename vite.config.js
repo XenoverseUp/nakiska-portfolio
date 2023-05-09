@@ -9,8 +9,10 @@ export default defineConfig({
     alias: {
       assets: path.resolve(__dirname, './src', 'assets'),
       animations: path.resolve(__dirname, './src', 'animations'),
+      shared: path.resolve(__dirname, './src', 'shared'),
       pages: path.resolve(__dirname, './src', 'pages'),
       hooks: path.resolve(__dirname, './src', 'hooks'),
+      utils: path.resolve(__dirname, './src', 'utils'),
       styles: path.resolve(__dirname, './src', 'styles'),
       '@sc': path.resolve(__dirname, './src', 'styles', 'components'),
       '@sp': path.resolve(__dirname, './src', 'styles', 'pages'),

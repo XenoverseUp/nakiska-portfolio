@@ -1,6 +1,7 @@
 import { ReactComponent as Logo } from 'assets/svg/logo.svg'
-import styles from '@sc/Nav.module.scss'
 import { Link, NavLink } from 'react-router-dom'
+import Magnetic from 'components/Magnetic'
+import styles from '@sc/Nav.module.scss'
 import cx from 'cx'
 
 const Nav = () => {
@@ -14,30 +15,19 @@ const Nav = () => {
       >
         <Logo width={20} />
       </NavLink>
-      <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          cx('mono', styles.link, { [styles.active]: isActive })
-        }
-      >
-        contact
-      </NavLink>
-      <NavLink
-        to="/services"
-        className={({ isActive }) =>
-          cx('mono', styles.link, { [styles.active]: isActive })
-        }
-      >
-        services
-      </NavLink>
-      <NavLink
-        to="/clients"
-        className={({ isActive }) =>
-          cx('mono', styles.link, { [styles.active]: isActive })
-        }
-      >
-        clients
-      </NavLink>
+
+      {['contact', 'clients', 'services'].map((item) => (
+        // <Magnetic>
+        <NavLink
+          to={`/${item}`}
+          className={({ isActive }) =>
+            cx('mono', styles.link, { [styles.active]: isActive })
+          }
+        >
+          {item}
+        </NavLink>
+        // </Magnetic>
+      ))}
     </nav>
   )
 }

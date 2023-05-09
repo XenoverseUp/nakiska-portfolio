@@ -1,46 +1,22 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useCallback } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-
-import Home from 'pages'
-import Contact from 'pages/contact'
-import Clients from 'pages/clients'
-import Services from 'pages/services'
-
-import Layout from 'components/Layout'
-import PageTransition from 'components/PageTransition'
-
-import WebFontLoader from 'webfontloader'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import gsap, { Expo } from 'gsap'
+import WebFontLoader from 'webfontloader'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
-import IntroAnimation from './components/IntroAnimation'
+import useEventListener from 'hooks/useEventListener'
 
-import './utils/ArrayPrototypes'
+import Cursor from 'components/Cursor'
+import Layout from 'components/Layout'
+import PageTransition from 'components/PageTransition'
+import IntroAnimation from 'components/IntroAnimation'
+import routes from 'shared/routes'
+
+import 'utils/ArrayPrototypes'
+import { useSetAtom } from 'jotai'
+import { mouseLocation } from 'shared/atoms'
 
 gsap.registerPlugin(MotionPathPlugin)
-
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    Component: Home,
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    Component: Contact,
-  },
-  {
-    path: '/clients',
-    name: 'Clients',
-    Component: Clients,
-  },
-  {
-    path: '/services',
-    name: 'Services',
-    Component: Services,
-  },
-]
 
 function App() {
   const location = useLocation()
@@ -48,6 +24,15 @@ function App() {
   const transitionRef = useRef(null)
   const curtain = useRef(null)
   const curtainShadow = useRef(null)
+
+  const setMouse = useSetAtom(mouseLocation)
+
+  const mouseHandler = useCallback(
+    ({ pageX, pageY }) => {
+      setMouse({ x: pageX, y: pageY })
+    },
+    [setMouse]
+  )
 
   useEffect(
     () =>
@@ -89,8 +74,11 @@ function App() {
     }, transitionRef)
   }
 
+  useEventListener('mousemove', mouseHandler)
+
   return (
     <>
+      <Cursor />
       <Layout>
         <TransitionGroup component={null}>
           <CSSTransition

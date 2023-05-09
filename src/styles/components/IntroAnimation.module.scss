@@ -23,8 +23,8 @@
 .bubble {
   --size: 500px;
   position: absolute;
-  width: var(--size);
-  height: var(--size);
+  width: max(500px, var(--size));
+  height: max(500px, var(--size));
   pointer-events: none;
   z-index: 20;
   opacity: 0;
