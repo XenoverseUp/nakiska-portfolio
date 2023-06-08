@@ -14,7 +14,7 @@ export const setup = () => {
   gsap.set('#star-1', { '--size': '53vw' })
   gsap.set('#star-2', { '--size': '53vw' })
   gsap.set('#star-3', { '--size': '53vw' })
-  gsap.set('#star-4', { '--size': '53vw' })
+  gsap.set('#star-4', { '--size': '66vw' })
   gsap.set('#star-5', { '--size': '53vw' })
   gsap.set('#star-6', { '--size': '73vw' })
   gsap.set('#star-7', { '--size': '74vw' })
