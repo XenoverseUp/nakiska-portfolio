@@ -21,10 +21,10 @@ export const setup = () => {
   gsap.set('#star-8', { '--size': '66vw' })
   gsap.set('#star-9', { '--size': '66vw' })
 
-  gsap.set('#bubble-0', { '--size': '40vw' })
-  gsap.set('#bubble-1', { '--size': '51vw' })
-  gsap.set('#bubble-2', { '--size': '46vw' })
-  gsap.set('#bubble-3', { '--size': '46vw' })
+  gsap.set('#bubble-0', { '--size': '65vw' })
+  gsap.set('#bubble-1', { '--size': '72vw' })
+  gsap.set('#bubble-2', { '--size': '60vw' })
+  gsap.set('#bubble-3', { '--size': '64vw' })
 }
 
 export const animate = () => {
