@@ -22,7 +22,9 @@ export const setup = () => {
   gsap.set('#star-9', { '--size': '66vw' })
 
   gsap.set('#bubble-0', { '--size': '65vw' })
-  gsap.set('#bubble-1', { '--size': '72vw' })
+  gsap.set('#bubble-1', {
+    '--size': matchMedia('(max-width: 600px)') ? '80vh' : '70vw',
+  })
   gsap.set('#bubble-2', { '--size': '60vw' })
   gsap.set('#bubble-3', { '--size': '64vw' })
 }
@@ -255,7 +257,7 @@ const animateBubbles = () => {
   gsap
     .timeline()
     .to('#bubble-1', {
-      duration: 7,
+      duration: 5,
       delay: 1.5,
       motionPath: {
         path: '#bubble-path-1',
@@ -263,7 +265,7 @@ const animateBubbles = () => {
         autoRotate: true,
         alignOrigin: [0.5, 0.5],
       },
-      scale: 0.01,
+      scale: 0.1,
       immediateRender: true,
       ease: Power4.easeOut,
     })
