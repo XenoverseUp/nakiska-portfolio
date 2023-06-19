@@ -28,6 +28,8 @@ export const setup = () => {
   })
   gsap.set('#bubble-2', { '--size': '60vw' })
   gsap.set('#bubble-3', { '--size': '64vw' })
+  gsap.set('#bubble-4', { '--size': '32vw' })
+  gsap.set('#bubble-4', { '--size': '50vw' })
 }
 
 export const animate = () => {
@@ -48,7 +50,7 @@ const animateStars = () => {
       },
       scale: 0.7,
       immediateRender: true,
-      ease: Power4.easeOut,
+      ease: Power2.easeOut,
     })
     .to(
       '#star-0',
@@ -78,7 +80,7 @@ const animateStars = () => {
         scale: [1, 0.8, 0.5, 0.2, 0.15],
       },
       immediateRender: true,
-      ease: Power4.easeOut,
+      ease: Power2.easeOut,
     })
     .to(
       '#star-1',
@@ -106,7 +108,7 @@ const animateStars = () => {
       },
       scale: 0.15,
       immediateRender: true,
-      ease: Power4.easeOut,
+      ease: Power2.easeOut,
     })
     .to(
       '#star-2',
@@ -354,7 +356,7 @@ const animateBubbles = () => {
         align: '#bubble-path-1',
         alignOrigin: [0.5, 0.5],
       },
-      scale: 0.1,
+      scale: 0.15,
       immediateRender: true,
       ease: Power4.easeOut,
     })
@@ -395,6 +397,42 @@ const animateBubbles = () => {
       ease: Power3.easeOut,
     })
     .set('#bubble-3', {
+      display: 'none',
+    })
+
+  gsap
+    .timeline()
+    .to('#bubble-4', {
+      duration: 5.5 * ANIMATION_SPEED_MULTIPLIER,
+      delay: 1.3 * ANIMATION_SPEED_MULTIPLIER,
+      motionPath: {
+        path: '#bubble-path-4',
+        align: '#bubble-path-4',
+        alignOrigin: [0.5, 0.5],
+      },
+      scale: 0.4,
+      immediateRender: true,
+      ease: Power4.easeOut,
+    })
+    .set('#bubble-4', {
+      display: 'none',
+    })
+
+  gsap
+    .timeline()
+    .to('#bubble-5', {
+      duration: 5 * ANIMATION_SPEED_MULTIPLIER,
+      delay: 1.3 * ANIMATION_SPEED_MULTIPLIER,
+      motionPath: {
+        path: '#bubble-path-5',
+        align: '#bubble-path-5',
+        alignOrigin: [0.5, 0.5],
+      },
+      scale: 0.3,
+      immediateRender: true,
+      ease: Power3.easeOut,
+    })
+    .set('#bubble-5', {
       display: 'none',
     })
 }

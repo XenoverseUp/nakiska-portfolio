@@ -7,7 +7,7 @@ import { setup, animate } from 'animations/intro'
 
 const IntroAnimation = () => (
   <AnimationBoundary>
-    {new Array(4).fill(null).map((_, i) => (
+    {new Array(6).fill(null).map((_, i) => (
       <svg
         key={`bubble-${i}`}
         id={`bubble-${i}`}
