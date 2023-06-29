@@ -20,6 +20,7 @@ const Nav = () => {
         // <Magnetic>
         <NavLink
           to={`/${item}`}
+          key={`/${item}`}
           className={({ isActive }) =>
             cx('mono', styles.link, { [styles.active]: isActive })
           }

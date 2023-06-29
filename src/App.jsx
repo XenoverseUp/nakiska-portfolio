@@ -1,38 +1,26 @@
-import { useEffect, useLayoutEffect, useRef, useCallback } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import gsap, { Expo } from 'gsap'
 import WebFontLoader from 'webfontloader'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
-import useEventListener from 'hooks/useEventListener'
 
 import Cursor from 'components/Cursor'
-import Layout from 'components/Layout'
+import PageLayout from 'components/Layout'
 import PageTransition from 'components/PageTransition'
 import IntroAnimation from 'components/IntroAnimation'
 import routes from 'shared/routes'
-
+import { Colors, Layout } from '../config'
+import kebabize from 'utils/kebabize'
 import 'utils/ArrayPrototypes'
-import { useSetAtom } from 'jotai'
-import { mouseLocation } from 'shared/atoms'
 
 gsap.registerPlugin(MotionPathPlugin)
 
 function App() {
   const location = useLocation()
-
   const transitionRef = useRef(null)
   const curtain = useRef(null)
   const curtainShadow = useRef(null)
-
-  const setMouse = useSetAtom(mouseLocation)
-
-  const mouseHandler = useCallback(
-    ({ pageX, pageY }) => {
-      setMouse({ x: pageX, y: pageY })
-    },
-    [setMouse]
-  )
 
   useEffect(
     () =>
@@ -43,6 +31,16 @@ function App() {
       }),
     []
   )
+
+  useEffect(() => {
+    const config = { ...Colors, ...Layout }
+    Object.keys(config).forEach((key) =>
+      document.documentElement.style.setProperty(
+        `--${kebabize(key)}`,
+        config[key]
+      )
+    )
+  }, [])
 
   useLayoutEffect(() => {
     gsap.context(() => {}, transitionRef)
@@ -74,12 +72,10 @@ function App() {
     }, transitionRef)
   }
 
-  useEventListener('mousemove', mouseHandler)
-
   return (
     <>
       <Cursor />
-      <Layout>
+      <PageLayout>
         <TransitionGroup component={null}>
           <CSSTransition
             key={location.key}
@@ -94,7 +90,7 @@ function App() {
             </Routes>
           </CSSTransition>
         </TransitionGroup>
-      </Layout>
+      </PageLayout>
       <IntroAnimation />
       <PageTransition
         ref={transitionRef}

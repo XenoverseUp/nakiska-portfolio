@@ -8,15 +8,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: clamp(
-    0.5rem,
-    0.924vw + 0.261rem,
-    1rem
-  ); // vw: 414px => 8px; vw: 1280px => 16px
-  line-height: clamp(0.6rem, 1.293vw + 0.265rem, 1.3rem);
-}
-
 :root {
   --accent-color: #ff3121;
   --background-color: #000;
@@ -28,7 +19,6 @@ html {
 
   --border-width: 50px;
   --nav-padding: 39px;
-  --background-color: #000;
   --line-height: 1.5;
 
   font-family: Benguiat;
@@ -44,6 +34,15 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+html {
+  font-size: clamp(
+    0.5rem,
+    0.924vw + 0.261rem,
+    1rem
+  ); // vw: 414px => 8px; vw: 1280px => 16px
+  line-height: clamp(0.6rem, 1.293vw + 0.265rem, 1.3rem);
 }
 
 ::selection {
