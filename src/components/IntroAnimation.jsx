@@ -5,6 +5,7 @@ import Paths from 'components/Paths'
 import gsap from 'gsap'
 import { setup, animate } from 'animations/intro'
 
+
 const IntroAnimation = () => (
   <AnimationBoundary>
     {new Array(6).fill(null).map((_, i) => (
