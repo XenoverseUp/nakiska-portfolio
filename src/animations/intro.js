@@ -1,4 +1,4 @@
-import gsap, { Sine, Power3, Power2, Power1, Power4, Expo, Circ } from 'gsap'
+import gsap, { Power3, Power2, Power4 } from 'gsap'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import { ANIMATION_SPEED_MULTIPLIER } from '../../config'
 
@@ -55,10 +55,9 @@ const animateStars = () => {
     .to(
       '#star-0',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${3 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -85,10 +84,9 @@ const animateStars = () => {
     .to(
       '#star-1',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${4.5 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -113,10 +111,9 @@ const animateStars = () => {
     .to(
       '#star-2',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${4.5 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -143,10 +140,9 @@ const animateStars = () => {
     .to(
       '#star-3',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${5 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -173,10 +169,9 @@ const animateStars = () => {
     .to(
       '#star-4',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${4.5 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -203,10 +198,9 @@ const animateStars = () => {
     .to(
       '#star-5',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${5 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -231,10 +225,9 @@ const animateStars = () => {
     .to(
       '#star-6',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${3.5 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -259,10 +252,9 @@ const animateStars = () => {
     .to(
       '#star-7',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${4 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -287,10 +279,9 @@ const animateStars = () => {
     .to(
       '#star-8',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${4 * ANIMATION_SPEED_MULTIPLIER}`
     )
@@ -315,10 +306,9 @@ const animateStars = () => {
     .to(
       '#star-9',
       {
-        rotation: `${['+', '-'].sample()}360`,
-        duration: 3.75 * ANIMATION_SPEED_MULTIPLIER,
+        rotation: `${['+', '-'].sample()}720`,
+        duration: 7.5 * ANIMATION_SPEED_MULTIPLIER,
         ease: 'none',
-        repeat: -1,
       },
       `-=${4 * ANIMATION_SPEED_MULTIPLIER}`
     )
