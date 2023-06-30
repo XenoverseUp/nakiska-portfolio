@@ -7,6 +7,7 @@ import autoprefixer from 'autoprefixer'
 export default defineConfig({
   resolve: {
     alias: {
+      '@': path.resolve(__dirname),
       assets: path.resolve(__dirname, './src', 'assets'),
       animations: path.resolve(__dirname, './src', 'animations'),
       shared: path.resolve(__dirname, './src', 'shared'),

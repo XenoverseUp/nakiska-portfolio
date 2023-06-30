@@ -23,3 +23,19 @@
     }
   }
 }
+
+.desc {
+  font-family: 'PT Mono';
+  font-size: 12px;
+  margin-bottom: 6px;
+  text-align: center;
+  padding-inline: calc(var(--border-width) + 3rem);
+}
+
+.content {
+  font-weight: 400;
+  max-width: 840px;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 1.3;
+}

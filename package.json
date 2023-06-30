@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-visually-hidden": "^1.0.3",
     "gsap": "^3.11.4",
     "jotai": "^2.0.2",
     "react": "^18.2.0",

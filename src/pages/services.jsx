@@ -1,39 +1,19 @@
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import styles from '@sp/services.module.scss'
 import Page from 'components/Page'
 import Swapper from 'components/Swapper'
+import { servicesContent } from '@/config'
 
 export default function Services() {
   return (
     <Page>
+      <VisuallyHidden asChild>
+        <h1>{servicesContent.seoTitle}</h1>
+      </VisuallyHidden>
       <div className={styles.main}>
-        <p>what I do is</p>
-        <Swapper {...{ items }} />
+        <p>{servicesContent.subtitle}</p>
+        <Swapper items={servicesContent.items} />
       </div>
     </Page>
   )
 }
-
-const items = [
-  'creative direction',
-  'journey mapping',
-  'brand strategy',
-  'interface design',
-  'Heuristics',
-  'information Architecture',
-  'Logo Design',
-  'Digital Experience Platforms',
-  'Product Design',
-  'App Design',
-  'Audio/Visual Experiments ',
-  'Data Visualizations',
-  'Game Design',
-  'Package Design',
-  'Prototyping',
-  'Journey Mapping',
-  'Product Validation',
-  'Iterative Testing',
-  'Set Design',
-  'Engagement Strategy',
-  'Copywriting',
-  'Marketing Campaigns',
-]

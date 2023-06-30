@@ -1,14 +1,16 @@
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import styles from '@sp/index.module.scss'
 import Page from 'components/Page'
+import { homeContent } from '@/config'
 
 export default function Home() {
   return (
     <Page>
       <div className={styles.main}>
-        <h1>
-          I'm Nakiska, a creative director & interaction designer based in
-          Brooklyn.
-        </h1>
+        <VisuallyHidden asChild>
+          <h1>{homeContent.seoTitle}</h1>
+        </VisuallyHidden>
+        <h2>{homeContent.visibleTitle}</h2>
       </div>
     </Page>
   )

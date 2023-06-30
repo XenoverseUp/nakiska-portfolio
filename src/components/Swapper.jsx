@@ -3,6 +3,7 @@ import styles from '@sc/Swapper.module.scss'
 import useIndex from 'hooks/useIndex'
 import useBoolean from 'hooks/useBoolean'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { SWAP_DURATION } from '@/config'
 
 const Swapper = ({ items }) => {
   const [index, { increment }] = useIndex({
@@ -11,7 +12,7 @@ const Swapper = ({ items }) => {
   const [swapping, _, setSwapping] = useBoolean(false)
 
   useEffect(() => {
-    const interval = setInterval(() => swapping && increment(), 2000)
+    const interval = setInterval(() => swapping && increment(), SWAP_DURATION)
 
     return () => clearInterval(interval)
   })

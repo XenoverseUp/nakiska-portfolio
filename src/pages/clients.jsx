@@ -1,50 +1,19 @@
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import styles from '@sp/clients.module.scss'
 import Page from 'components/Page'
 import Swapper from 'components/Swapper'
+import { clientsContent } from '@/config'
 
 export default function Clients() {
   return (
     <Page>
+      <VisuallyHidden asChild>
+        <h1>{clientsContent.seoTitle}</h1>
+      </VisuallyHidden>
       <div className={styles.main}>
-        <p>some brands i've made cool stuff with</p>
-        <Swapper {...{ items }} />
+        <p>{clientsContent.subtitle}</p>
+        <Swapper items={clientsContent.items} />
       </div>
     </Page>
   )
 }
-
-const items = [
-  'Audi',
-  'Anuel AA',
-  'Barbie',
-  'Motorola',
-  'Marines',
-  'UPS',
-  'Showtime',
-  'United Airlines',
-  'Qualcomm',
-  'Netflix',
-  'Intel',
-  'E Trade',
-  'Pratt Institute',
-  'Feedmob',
-  'Literacy Partners',
-  'Memphis Meats',
-  'Tag Heuer',
-  'Box',
-  'Visa',
-  'Uber',
-  'Gaggneau',
-  'Wacoal',
-  'Hallmark',
-  'National Geographic',
-  'Marie Claire',
-  'Wall Street Journal',
-  'Maserati',
-  'Citrix',
-  'Amazon Web Services',
-  'Tenor',
-  'HBO',
-  'The Bosco',
-  'L’Attitude',
-]

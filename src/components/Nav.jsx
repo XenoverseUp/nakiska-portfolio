@@ -1,8 +1,8 @@
 import { ReactComponent as Logo } from 'assets/svg/logo.svg'
 import { Link, NavLink } from 'react-router-dom'
-import Magnetic from 'components/Magnetic'
 import styles from '@sc/Nav.module.scss'
 import cx from 'cx'
+import { navigation } from '@/config'
 
 const Nav = () => {
   return (
@@ -16,18 +16,16 @@ const Nav = () => {
         <Logo width={20} />
       </NavLink>
 
-      {['contact', 'clients', 'services'].map((item) => (
-        // <Magnetic>
+      {Object.keys(navigation).map((key) => (
         <NavLink
-          to={`/${item}`}
-          key={`/${item}`}
+          to={`${key}`}
+          key={`${key}`}
           className={({ isActive }) =>
             cx('mono', styles.link, { [styles.active]: isActive })
           }
         >
-          {item}
+          {navigation[key]}
         </NavLink>
-        // </Magnetic>
       ))}
     </nav>
   )
