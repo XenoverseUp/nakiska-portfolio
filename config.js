@@ -152,6 +152,7 @@ export const clientsContent = {
     'L’Attitude',
   ],
 }
+
 export const servicesContent = {
   seoTitle: 'Clients',
   subtitle: "some brands i've made cool stuff with",
