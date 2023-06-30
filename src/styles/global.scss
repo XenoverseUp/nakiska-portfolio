@@ -43,6 +43,7 @@ html {
     1rem
   ); // vw: 414px => 8px; vw: 1280px => 16px
   line-height: clamp(0.6rem, 1.293vw + 0.265rem, 1.3rem);
+  cursor: none;
 }
 
 ::selection {

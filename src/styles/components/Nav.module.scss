@@ -31,6 +31,10 @@
   &:hover {
     fill: #fff !important;
   }
+
+  * {
+    pointer-events: none;
+  }
 }
 
 .link {

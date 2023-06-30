@@ -1,0 +1,33 @@
+.cursor {
+  width: 108px;
+  height: 108px;
+  border: 1px solid white;
+  border-radius: 9899px;
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mix-blend-mode: exclusion;
+  overflow: hidden;
+}
+
+.cursorText {
+  font-family: 'PT Mono';
+  font-size: 12px;
+}
+
+.follower {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg * {
+    fill: var(--accent-color) !important;
+  }
+}

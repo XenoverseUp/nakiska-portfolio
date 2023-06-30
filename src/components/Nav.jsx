@@ -1,5 +1,5 @@
 import { ReactComponent as Logo } from 'assets/svg/logo.svg'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styles from '@sc/Nav.module.scss'
 import cx from 'cx'
 import { navigation } from '@/config'
@@ -9,6 +9,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <NavLink
         to="/"
+        data-hover
         className={({ isActive }) =>
           cx(styles.logo, { [styles.active]: isActive })
         }
@@ -20,6 +21,7 @@ const Nav = () => {
         <NavLink
           to={`${key}`}
           key={`${key}`}
+          data-hover
           className={({ isActive }) =>
             cx('mono', styles.link, { [styles.active]: isActive })
           }
