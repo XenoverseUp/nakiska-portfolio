@@ -32,12 +32,10 @@ export const Colors = {
  * @typedef  {Object} Layout
  * @property {string} borderWidth                       - Width of page border.                                   DEFAULT: '3.125rem'
  * @property {string} navPadding                        - Spacing between the page border and navigation links.   DEFAULT: '2.75rem'
- * @property {string} lineHeight                        - Primary text line height.                               DEFAULT: 1.5
  */
 
 /** @type {Layout} */
 export const Layout = {
   borderWidth: '3.125rem',
   navPadding: '2.75rem',
-  lineHeight: 1.5,
 }

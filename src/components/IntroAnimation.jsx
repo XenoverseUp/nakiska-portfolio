@@ -1,4 +1,4 @@
-import { Fragment, useLayoutEffect, useRef } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 import styles from '@sc/IntroAnimation.module.scss'
 import cx from 'cx'
 import Paths from 'components/Paths'
@@ -47,7 +47,7 @@ const IntroAnimation = () => (
 const AnimationBoundary = ({ children }) => {
   const boundary = useRef(null)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.context(() => {
       setup()
       animate()
