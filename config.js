@@ -105,16 +105,20 @@ export const navigation = {
  * @typedef  {Object} Cursor
  * @property {string} playReel                          - Play reel cursor text.                                            DEFAULT: 'play reel'
  * @property {string} mailMe                            - E-mail hover cursor text.                                         DEFAULT: 'mail me'
+ * @property {number} cursorFlexibility                 - The flexibility of cursor. The Lower = Springy, Rigid             DEFAULT: 0.2
+ * @property {number} followerFlexibility               - The flexibility of follower.                                      DEFAULT: 0.3
  * @property {FollowerType} followerType
- * @property {*} followerFill
+ * @property {string} starFill
  */
 
 /** @type {Cursor} */
 export const Cursor = {
   playReel: 'play reel',
   mailMe: 'mail me',
+  cursorFlexibility: 0.2,
+  followerFlexibility: 0.3,
   followerType: FollowerType.STAR,
-  followerFill: Colors.accentColor,
+  starFill: Colors.accentColor,
 }
 
 /**---------*/

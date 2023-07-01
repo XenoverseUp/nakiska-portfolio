@@ -20,6 +20,10 @@
       right: calc(var(--border-width) + var(--nav-padding));
       bottom: calc(var(--border-width) + var(--nav-padding));
     }
+
+    @media screen and (max-width: 480px) {
+      font-size: 10pt;
+    }
   }
 }
 

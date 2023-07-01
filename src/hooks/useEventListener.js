@@ -1,6 +1,11 @@
 import { useRef, useEffect } from 'react'
 
-const useEventListener = (eventName, handler, element = window) => {
+const useEventListener = (
+  eventName,
+  handler,
+  active = true,
+  element = window
+) => {
   const savedHandler = useRef()
 
   useEffect(() => {
@@ -12,7 +17,7 @@ const useEventListener = (eventName, handler, element = window) => {
 
     const eventListener = (event) => savedHandler.current(event)
 
-    element.addEventListener(eventName, eventListener)
+    if (active) element.addEventListener(eventName, eventListener)
 
     return () => {
       element.removeEventListener(eventName, eventListener)

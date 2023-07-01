@@ -1,6 +1,6 @@
 .cursor {
   width: 108px;
-  height: 108px;
+  aspect-ratio: 1 / 1;
   border: 1px solid white;
   border-radius: 9899px;
   position: fixed;
@@ -9,15 +9,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   mix-blend-mode: exclusion;
   overflow: hidden;
+
+  &.coarse {
+    width: 12rem;
+    max-width: 144px;
+    bottom: var(--border-width);
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
 }
 
 .cursorText {
   font-family: 'PT Mono';
   font-size: 12px;
   text-align: center;
+  margin-inline: 0.5rem;
 }
 
 .follower {
@@ -27,8 +36,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  aspect-ratio: 1 / 1;
+  width: 30px !important;
+  height: 30px !important;
 
   svg * {
     fill: var(--accent-color) !important;
+  }
+
+  &.coarse {
+    bottom: var(--border-width);
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 5rem !important;
   }
 }

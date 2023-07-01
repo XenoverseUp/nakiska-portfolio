@@ -1,11 +1,8 @@
 import { Fragment } from 'react'
 import styles from '@sc/Paths.module.scss'
 import cx from 'cx'
-import useMediaQuery from '../hooks/useMediaQuery'
 
 const Paths = () => {
-  const isMobile = useMediaQuery('max-width: 600px')
-
   return (
     <svg
       viewBox="0 0 1440 810"
@@ -14,91 +11,42 @@ const Paths = () => {
       className={cx(styles.motionPath, styles.bubblePath)}
       preserveAspectRatio="none"
     >
-      {false ? (
-        <Fragment>
-          <path
-            id="bubble-path-0"
-            d="M67 533.5C113.833 403.667 264.1 155.9 490.5 203.5C773.5 263 1067 317 1126 122.5C1173.2 -33.1 1162 -190.333 1150.5 -249.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-1"
-            d="M67 533.5C113.833 403.667 264.1 155.9 490.5 203.5C773.5 263 1067 317 1126 122.5C1173.2 -33.1 1162 -190.333 1150.5 -249.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-2"
-            d="M673 758C782 745.5 1007.9 697.4 1039.5 605C1079 489.5 1485 516.5 1396.5 1070.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-3"
-            d="M680 373.5C636.667 453.167 507.6 607.1 338 585.5C168.4 563.9 244 886.833 185 1041"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-4"
-            d="M590 978.5C521.167 958 383 900.7 381 835.5C378.5 754 263.5 571 363 452C442.6 356.8 167.167 121.667 19.5 16"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-5"
-            d="M24 18C118 83.1667 302.9 238.7 290.5 339.5C275 465.5 103.5 569 105.5 635C107.5 701 95 1029.5 202.5 1036"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-6"
-            d="M742 42.5C586.5 84.3333 263.1 147.7 213.5 66.5C163.9 -14.7 175.166 -104 187 -138.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-        </Fragment>
-      ) : (
-        <Fragment>
-          <path
-            id="bubble-path-0"
-            d="M67 533.5C113.833 403.667 264.1 155.9 490.5 203.5C773.5 263 1067 317 1126 122.5C1173.2 -33.1 1162 -190.333 1150.5 -249.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-1"
-            d="M1308 393.5C1202.33 372 973.201 351.2 902.001 440C813.001 551 901.501 738.5 719.501 723.5C537.501 708.5 320 -56.5 352 -243.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-2"
-            d="M594.5 637C700 713 882.5 705.5 1027 605C1171.5 504.5 1467 676.5 1169.5 1010"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-3"
-            d="M680 373.5C636.667 453.167 507.6 607.1 338 585.5C168.4 563.9 244 886.833 185 1041"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-4"
-            d="M1420 -12C1458 160.5 830.5 695.5 815.5 1005.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-          <path
-            id="bubble-path-5"
-            d="M527 359C578.833 233.333 721.7 5.60002 878.5 100C1074.5 218 1603.5 308.5 1909 247.5"
-            stroke="white"
-            strokeWidth="4"
-          />
-        </Fragment>
-      )}
+      <path
+        id="bubble-path-0"
+        d="M67 533.5C113.833 403.667 264.1 155.9 490.5 203.5C773.5 263 1067 317 1126 122.5C1173.2 -33.1 1162 -190.333 1150.5 -249.5"
+        stroke="white"
+        strokeWidth="4"
+      />
+      <path
+        id="bubble-path-1"
+        d="M1308 393.5C1202.33 372 973.201 351.2 902.001 440C813.001 551 901.501 738.5 719.501 723.5C537.501 708.5 320 -56.5 352 -243.5"
+        stroke="white"
+        strokeWidth="4"
+      />
+      <path
+        id="bubble-path-2"
+        d="M594.5 637C700 713 882.5 705.5 1027 605C1171.5 504.5 1467 676.5 1169.5 1010"
+        stroke="white"
+        strokeWidth="4"
+      />
+      <path
+        id="bubble-path-3"
+        d="M680 373.5C636.667 453.167 507.6 607.1 338 585.5C168.4 563.9 244 886.833 185 1041"
+        stroke="white"
+        strokeWidth="4"
+      />
+      <path
+        id="bubble-path-4"
+        d="M1420 -12C1458 160.5 830.5 695.5 815.5 1005.5"
+        stroke="white"
+        strokeWidth="4"
+      />
+      <path
+        id="bubble-path-5"
+        d="M527 359C578.833 233.333 721.7 5.60002 878.5 100C1074.5 218 1603.5 308.5 1909 247.5"
+        stroke="white"
+        strokeWidth="4"
+      />
       {/* STARS */}
       <path
         id="star-path-0"
