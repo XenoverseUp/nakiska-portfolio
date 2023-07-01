@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import gsap, { Expo } from 'gsap'
@@ -42,15 +42,9 @@ function App() {
     )
   }, [])
 
-  useLayoutEffect(() => {
-    gsap.context(() => {}, transitionRef)
-  }, [])
-
-  let pageTransitionContext = null
-
   const onExit = () => {
     // animateSlider()
-    pageTransitionContext = gsap.context(() => {
+    gsap.context(() => {
       gsap.to(['#curtain-shadow', '#curtain'], {
         height: '100%',
         duration: 0.8,
@@ -63,7 +57,7 @@ function App() {
 
   const onEntered = () => {
     // animateParticles()
-    pageTransitionContext = gsap.context(() => {
+    gsap.context(() => {
       gsap.to(['#curtain', '#curtain-shadow'], {
         height: 0,
         duration: 0.7,

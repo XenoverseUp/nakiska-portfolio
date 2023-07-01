@@ -26,8 +26,10 @@ const Swapper = ({ items }) => {
       <TransitionGroup component={null}>
         <CSSTransition
           unmountOnExit
+          data-cursor-hover
+          data-swapper-hover
           key={index}
-          classNames={'swap'}
+          classNames="swap"
           timeout={1000}
         >
           <span>{items[index]}</span>

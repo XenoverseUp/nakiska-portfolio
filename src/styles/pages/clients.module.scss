@@ -9,6 +9,7 @@
   height: 100%;
 
   p {
+    transform: translateY(2rem);
     @extend .desc;
   }
 }

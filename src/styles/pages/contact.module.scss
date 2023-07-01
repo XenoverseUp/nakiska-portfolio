@@ -29,7 +29,7 @@
       background-color: var(--accent-color);
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 560px) {
       font-size: 3rem;
 
       &::after {
@@ -37,7 +37,7 @@
       }
     }
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 376px) {
       font-size: 2.3rem;
 
       &::after {

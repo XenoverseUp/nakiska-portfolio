@@ -9,7 +9,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <NavLink
         to="/"
-        data-hover
+        data-cursor-hover
         className={({ isActive }) =>
           cx(styles.logo, { [styles.active]: isActive })
         }
@@ -21,7 +21,7 @@ const Nav = () => {
         <NavLink
           to={`${key}`}
           key={`${key}`}
-          data-hover
+          data-cursor-hover
           className={({ isActive }) =>
             cx('mono', styles.link, { [styles.active]: isActive })
           }

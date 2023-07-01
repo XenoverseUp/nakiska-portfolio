@@ -1,3 +1,5 @@
+import FollowerType from './src/utils/FollowerTypes'
+
 /* * * * * * * * * * * * *
  * JAVASCRIPT VARIABLES  *
  * * * * * * * * * * * * */
@@ -7,7 +9,7 @@ const INTRO_ANIMATION_SPEED = 9
 export const ANIMATION_SPEED_MULTIPLIER = 5 / INTRO_ANIMATION_SPEED
 
 /** @type {number} in miliseconds                       - Changes the duration of swapper in the /clients and /services.   DEFAULT: 2000 */
-export const SWAP_DURATION = 2000
+export const SWAP_DURATION = 1750
 
 /* * * * * * * * *
  * CSS VARIABLES *
@@ -40,8 +42,8 @@ export const Colors = {
 /**---------*/
 /**
  * @typedef  {Object} Layout
- * @property {string} borderWidth                       - Width of page border.                                   DEFAULT: '3.125rem'
- * @property {string} navPadding                        - Spacing between the page border and navigation links.   DEFAULT: '2.75rem'
+ * @property {string} borderWidth                       - Width of page border.                                             DEFAULT: '3.125rem'
+ * @property {string} navPadding                        - Spacing between the page border and navigation links.             DEFAULT: '2.75rem'
  */
 
 /** @type {Layout} */
@@ -95,6 +97,24 @@ export const navigation = {
   '/contact': 'contact',
   '/services': 'services',
   '/clients': 'clients',
+}
+
+/**---------*/
+
+/**
+ * @typedef  {Object} Cursor
+ * @property {string} playReel                          - Play reel cursor text.                                            DEFAULT: 'play reel'
+ * @property {string} mailMe                            - E-mail hover cursor text.                                         DEFAULT: 'mail me'
+ * @property {FollowerType} followerType
+ * @property {*} followerFill
+ */
+
+/** @type {Cursor} */
+export const Cursor = {
+  playReel: 'play reel',
+  mailMe: 'mail me',
+  followerType: FollowerType.STAR,
+  followerFill: Colors.accentColor,
 }
 
 /**---------*/
@@ -155,7 +175,7 @@ export const clientsContent = {
 
 export const servicesContent = {
   seoTitle: 'Clients',
-  subtitle: "some brands i've made cool stuff with",
+  subtitle: 'some things I do...',
   items: [
     'creative direction',
     'journey mapping',
