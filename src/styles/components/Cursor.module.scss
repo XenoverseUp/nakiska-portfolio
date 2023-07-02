@@ -13,6 +13,8 @@
   overflow: hidden;
 
   &.coarse {
+    pointer-events: initial;
+    cursor: pointer;
     width: 12rem;
     max-width: 144px;
     bottom: var(--border-width);
