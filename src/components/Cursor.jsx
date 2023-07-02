@@ -46,8 +46,6 @@ const Cursor = () => {
   useEventListener('mousemove', moveCursor, hasCursor.current)
   useEventListener('click', handleReel, hasCursor.current)
 
-  useEffect(() => console.log(hasCursor), [hasCursor])
-
   return (
     <Fragment>
       <div

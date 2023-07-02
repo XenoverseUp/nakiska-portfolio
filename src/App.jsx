@@ -2,9 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import gsap, { Expo } from 'gsap'
-import WebFontLoader from 'webfontloader'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
-
 import Cursor from 'components/Cursor'
 import PageLayout from 'components/Layout'
 import PageTransition from 'components/PageTransition'
@@ -21,16 +19,6 @@ function App() {
   const transitionRef = useRef(null)
   const curtain = useRef(null)
   const curtainShadow = useRef(null)
-
-  useEffect(
-    () =>
-      WebFontLoader.load({
-        google: {
-          families: ['PT Mono'],
-        },
-      }),
-    []
-  )
 
   useEffect(() => {
     const config = { ...Colors, ...Layout }

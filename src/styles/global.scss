@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -73,7 +74,7 @@ a {
 }
 
 .mono {
-  font-family: 'PT Mono';
+  font-family: 'PT Mono', 'Lucida Console', 'Courier New', monospace;
 }
 
 .page {

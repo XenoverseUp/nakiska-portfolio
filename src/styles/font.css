@@ -1,23 +1,7 @@
 @font-face {
   font-family: 'Benguiat';
-  src: url('../assets/font/BenguiatStd-Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Benguiat';
   src: url('../assets/font/BenguiatStd-Book.otf') format('opentype');
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Benguiat';
-  src: url('../assets/font/BenguiatStd-Medium.otf') format('opentype');
-  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }

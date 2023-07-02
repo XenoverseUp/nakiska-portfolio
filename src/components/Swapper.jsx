@@ -9,7 +9,12 @@ const Swapper = ({ items }) => {
   const [index, { increment }] = useIndex({
     count: items.length,
   })
-  const [swapping, _, setSwapping] = useBoolean(false)
+
+  const hasCursor = useRef(
+    matchMedia('(hover: hover) and (pointer: fine)').matches
+  )
+
+  const [swapping, _, setSwapping] = useBoolean(!hasCursor.current)
 
   useEffect(() => {
     const interval = setInterval(() => swapping && increment(), SWAP_DURATION)
@@ -20,8 +25,10 @@ const Swapper = ({ items }) => {
   return (
     <div
       className={styles.swapper}
-      onMouseEnter={() => setSwapping(true)}
-      onMouseLeave={() => setSwapping(false)}
+      {...(hasCursor.current && {
+        onMouseEnter: () => setSwapping(true),
+        onMouseLeave: () => setSwapping(false),
+      })}
     >
       <TransitionGroup component={null}>
         <CSSTransition
