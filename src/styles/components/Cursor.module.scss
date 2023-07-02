@@ -39,8 +39,6 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
-  width: 30px !important;
-  height: 30px !important;
 
   svg * {
     fill: var(--accent-color) !important;
@@ -51,6 +49,5 @@
     z-index: 10;
     left: 50%;
     transform: translate(-50%, 50%);
-    width: 5rem !important;
   }
 }

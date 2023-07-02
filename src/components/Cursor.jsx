@@ -46,7 +46,7 @@ const Cursor = () => {
   useEventListener('mousemove', moveCursor, hasCursor.current)
   useEventListener('click', handleReel, hasCursor.current)
 
-  useEffect(() => console.log(reelOpen), [reelOpen])
+  useEffect(() => console.log(hasCursor), [hasCursor])
 
   return (
     <Fragment>
@@ -63,7 +63,10 @@ const Cursor = () => {
         ref={follower}
         className={cx(styles.follower, { [styles.coarse]: !hasCursor.current })}
       >
-        <Star />
+        <Star
+          width={hasCursor ? 30 : '2rem'}
+          height={hasCursor ? 30 : '2rem'}
+        />
       </div>
       <Reel open={reelOpen} setOpen={setReelOpen} />
     </Fragment>
