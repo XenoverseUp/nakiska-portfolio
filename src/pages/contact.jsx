@@ -10,7 +10,7 @@ export default function Contact() {
         <h1>{contactsContent.seoTitle}</h1>
       </VisuallyHidden>
       <div className={styles.main}>
-        <p>{contactsContent.subtitle}</p>
+        <p data-cursor-text>{contactsContent.subtitle}</p>
         <a data-cursor-mail href={`mailto:${contactsContent.mail}`}>
           {contactsContent.mail}
         </a>

@@ -10,6 +10,7 @@
 
   h2 {
     @extend .content;
-    padding: calc(var(--border-width) + 3rem);
+    margin: calc(var(--border-width) + 3rem);
+    max-width: 640px;
   }
 }

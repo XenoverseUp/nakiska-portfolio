@@ -87,8 +87,38 @@ export const animateCursor = (
       duration: 0.2,
     })
 
+    gsap.to(cursorText.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.3,
+    })
+
     gsap.to(followerTween.current, {
       timeScale: 3,
+      overwrite: 'auto',
+    })
+  } else if (e.target.dataset.cursorText) {
+    gsap.to(cursorText.current, {
+      scale: 0.75,
+      opacity: 0,
+      duration: 0.3,
+    })
+
+    gsap.to(cursor.current, {
+      opacity: 1,
+      background: 'rgba(255, 255, 255, 0.1)', // 'transparent',
+      width: 96,
+      height: 96,
+      duration: 0.2,
+    })
+
+    gsap.to(follower.current, {
+      xPercent: 130,
+      yPercent: -220,
+    })
+
+    gsap.to(followerTween.current, {
+      timeScale: 1,
       overwrite: 'auto',
     })
   } else {
@@ -114,6 +144,12 @@ export const animateCursor = (
       width: 108,
       height: 108,
       duration: 0.2,
+    })
+
+    gsap.to(cursorText.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.3,
     })
 
     gsap.to(follower.current, {

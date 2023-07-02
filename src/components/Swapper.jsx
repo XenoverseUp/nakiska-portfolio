@@ -18,7 +18,6 @@ const Swapper = ({ items }) => {
 
   useEffect(() => {
     const interval = setInterval(() => swapping && increment(), SWAP_DURATION)
-
     return () => clearInterval(interval)
   })
 

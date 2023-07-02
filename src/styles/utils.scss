@@ -27,9 +27,10 @@
 .desc {
   font-family: 'PT Mono', 'Lucida Console', 'Courier New', monospace;
   font-size: 12px;
-  margin-bottom: 6px;
+  padding-bottom: 6px;
   text-align: center;
-  padding-inline: calc(var(--border-width) + 6rem);
+  margin-inline: calc(var(--border-width) + 6rem);
+  width: fit-content;
 }
 
 .content {

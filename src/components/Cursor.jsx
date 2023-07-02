@@ -35,7 +35,8 @@ const Cursor = () => {
     if (
       !(
         (e.target.dataset.cursorHover && !e.target.dataset.closeReel) ||
-        e.target.dataset.cursorMail
+        e.target.dataset.cursorMail ||
+        e.target.dataset.cursorText
       ) &&
       (!reelOpen || e.target.dataset.closeReel) &&
       !isHighlighting()

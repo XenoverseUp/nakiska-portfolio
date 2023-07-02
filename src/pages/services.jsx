@@ -11,7 +11,7 @@ export default function Services() {
         <h1>{servicesContent.seoTitle}</h1>
       </VisuallyHidden>
       <div className={styles.main}>
-        <p>{servicesContent.subtitle}</p>
+        <p data-cursor-text>{servicesContent.subtitle}</p>
         <Swapper items={servicesContent.items} />
       </div>
     </Page>

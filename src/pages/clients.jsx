@@ -11,7 +11,7 @@ export default function Clients() {
         <h1>{clientsContent.seoTitle}</h1>
       </VisuallyHidden>
       <div className={styles.main}>
-        <p>{clientsContent.subtitle}</p>
+        <p data-cursor-text>{clientsContent.subtitle}</p>
         <Swapper items={clientsContent.items} />
       </div>
     </Page>

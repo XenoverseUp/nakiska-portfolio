@@ -10,7 +10,7 @@ export default function Home() {
         <VisuallyHidden asChild>
           <h1>{homeContent.seoTitle}</h1>
         </VisuallyHidden>
-        <h2>{homeContent.visibleTitle}</h2>
+        <h2 data-cursor-text>{homeContent.visibleTitle}</h2>
       </div>
     </Page>
   )
