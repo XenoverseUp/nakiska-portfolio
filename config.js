@@ -1,5 +1,26 @@
 import FollowerType from './src/utils/FollowerTypes'
 
+/* * * * * * * * * * *
+ * SEO OPTIMIZATION  *
+ * * * * * * * * * * */
+
+export const SEO = {
+  title: 'Nakiska Shaikh Portfolio',
+  description: 'Pretty cool portfolio.',
+  canonical: 'http://example.com/path/to/page',
+  meta: {
+    charset: 'utf-8',
+    keywords: 'design,coding,figma,ui,ux',
+    author: 'Can Durmus',
+    openGraph: {
+      title: '',
+      url: '',
+      description: '',
+      image: '',
+    },
+  },
+}
+
 /* * * * * * * * * * * * *
  * JAVASCRIPT VARIABLES  *
  * * * * * * * * * * * * */

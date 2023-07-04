@@ -8,9 +8,9 @@ import PageLayout from 'components/Layout'
 import PageTransition from 'components/PageTransition'
 import IntroAnimation from 'components/IntroAnimation'
 import routes from 'shared/routes'
-import { Colors, Layout } from '../config'
-import kebabize from 'utils/kebabize'
+
 import 'utils/ArrayPrototypes'
+import useConfig from './hooks/useConfig'
 
 gsap.registerPlugin(MotionPathPlugin)
 
@@ -20,18 +20,9 @@ function App() {
   const curtain = useRef(null)
   const curtainShadow = useRef(null)
 
-  useEffect(() => {
-    const config = { ...Colors, ...Layout }
-    Object.keys(config).forEach((key) =>
-      document.documentElement.style.setProperty(
-        `--${kebabize(key)}`,
-        config[key]
-      )
-    )
-  }, [])
+  useConfig()
 
   const onExit = () => {
-    // animateSlider()
     gsap.context(() => {
       gsap.to(['#curtain-shadow', '#curtain'], {
         height: '100%',
@@ -44,7 +35,6 @@ function App() {
   }
 
   const onEntered = () => {
-    // animateParticles()
     gsap.context(() => {
       gsap.to(['#curtain', '#curtain-shadow'], {
         height: 0,
