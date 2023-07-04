@@ -87,6 +87,11 @@ export const animateCursor = (
       duration: 0.2,
     })
 
+    gsap.to(follower.current, {
+      xPercent: 150,
+      yPercent: -250,
+    })
+
     gsap.to(cursorText.current, {
       scale: 1,
       opacity: 1,
