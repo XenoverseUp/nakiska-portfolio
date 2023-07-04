@@ -1,18 +1,17 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import styles from '@sc/Swapper.module.scss'
 import useIndex from 'hooks/useIndex'
 import useBoolean from 'hooks/useBoolean'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { SWAP_DURATION } from '@/config'
+import useHasCursor from '../hooks/useHasCursor'
 
 const Swapper = ({ items }) => {
   const [index, { increment }] = useIndex({
     count: items.length,
   })
 
-  const hasCursor = useRef(
-    matchMedia('(hover: hover) and (pointer: fine)').matches
-  )
+  const hasCursor = useHasCursor()
 
   const [swapping, _, setSwapping] = useBoolean(!hasCursor.current)
 

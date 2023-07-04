@@ -1,13 +1,13 @@
 import { gsap } from 'gsap'
 import { Cursor } from '../../config'
 
-export const setup = (cursor, follower, followerTween) => {
+export const setup = (cursor, follower, followerTween, close) => {
   gsap.set(cursor.current, {
     xPercent: -50,
     yPercent: -50,
   })
 
-  gsap.set(cursor.current, {
+  gsap.set([cursor.current, close.current], {
     opacity: 0,
   })
 
@@ -29,8 +29,11 @@ export const animateCursor = (
   cursor,
   follower,
   cursorText,
-  followerTween
+  followerTween,
+  closeIcon,
+  reelOpen
 ) => {
+  console.log(reelOpen)
   // Mouse follow
   gsap.to(cursor.current, {
     x: e.clientX,
@@ -65,6 +68,16 @@ export const animateCursor = (
     gsap.to(followerTween.current, {
       timeScale: e.target.dataset.swapperHover ? 5 : 3,
       overwrite: 'auto',
+    })
+
+    gsap.to(cursorText.current, {
+      opacity: 1,
+      duration: 0.3,
+    })
+
+    gsap.to(closeIcon.current, {
+      opacity: 0,
+      duration: 0.3,
     })
   } else if (e.target.dataset.cursorMail) {
     cursorText.current.innerText = Cursor.mailMe
@@ -102,9 +115,24 @@ export const animateCursor = (
       timeScale: 3,
       overwrite: 'auto',
     })
+
+    gsap.to(cursorText.current, {
+      opacity: 1,
+      duration: 0.3,
+    })
+
+    gsap.to(closeIcon.current, {
+      opacity: 0,
+      duration: 0.3,
+    })
   } else if (e.target.dataset.cursorText) {
     gsap.to(cursorText.current, {
       scale: 0.75,
+      opacity: 0,
+      duration: 0.3,
+    })
+
+    gsap.to(closeIcon.current, {
       opacity: 0,
       duration: 0.3,
     })
@@ -124,6 +152,34 @@ export const animateCursor = (
 
     gsap.to(followerTween.current, {
       timeScale: 1,
+      overwrite: 'auto',
+    })
+  } else if (reelOpen) {
+    gsap.to(cursorText.current, {
+      opacity: 0,
+      duration: 0.3,
+    })
+
+    gsap.to(closeIcon.current, {
+      opacity: 1,
+      duration: 0.3,
+    })
+
+    gsap.to(cursor.current, {
+      opacity: 1,
+      background: 'transparent',
+      width: 96,
+      height: 96,
+      duration: 0.2,
+    })
+
+    gsap.to(follower.current, {
+      xPercent: 130,
+      yPercent: -220,
+    })
+
+    gsap.to(followerTween.current, {
+      timeScale: 2,
       overwrite: 'auto',
     })
   } else {
@@ -157,6 +213,11 @@ export const animateCursor = (
       duration: 0.3,
     })
 
+    gsap.to(closeIcon.current, {
+      opacity: 0,
+      duration: 0.3,
+    })
+
     gsap.to(follower.current, {
       xPercent: 150,
       yPercent: -250,
@@ -167,4 +228,13 @@ export const animateCursor = (
       overwrite: 'auto',
     })
   }
+}
+
+export const animateCursorFollower = (follower) => {
+  gsap.to(follower.current, {
+    rotate: 360,
+    duration: 4,
+    repeat: -1,
+    ease: 'none',
+  })
 }

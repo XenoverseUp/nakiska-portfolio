@@ -7,9 +7,7 @@ import './styles/font.css'
 import './styles/global.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
   <BrowserRouter>
     <App />
   </BrowserRouter>
-  // </React.StrictMode>
 )

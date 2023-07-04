@@ -7,6 +7,9 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0 0 0 / 0);
+  -webkit-touch-callout: none;
 }
 
 :root {
@@ -142,23 +145,10 @@ a {
   transition: all 600ms ease-in-out;
 }
 
-// @each $path in $star-paths {
-//   $i: index($star-paths, $path);
-
-//   #star-#{$i - 1} {
-//     display: block;
-//     offset-path: path($path);
-//     animation: move 2000ms infinite alternate ease-in-out;
-//     // scale 2000ms infinite alternate ease-in-out;
-//     offset-anchor: 0 100%;
-//   }
-// }
-
-// @keyframes move {
-//   0% {
-//     offset-distance: 0%;
-//   }
-//   100% {
-//     offset-distance: 100%;
-//   }
-// }
+.modal-enter-done {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-exit {
+  opacity: 0;
+}
