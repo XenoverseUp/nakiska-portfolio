@@ -33,10 +33,10 @@ const Cursor = () => {
 
   useEffect(() => {
     if (hasCursor.current) setup(cursor, follower, followerTween, close)
-    else {
-      animateCursorFollower(follower)
-      document.body.style.cursor = 'auto'
-    }
+    // else {
+    //   animateCursorFollower(follower)
+    //   document.body.style.cursor = 'auto'
+    // }
   }, [])
 
   const moveCursor = useCallback(
