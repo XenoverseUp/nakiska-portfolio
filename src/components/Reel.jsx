@@ -8,8 +8,10 @@ import ReelPlayer from './ReelPlayer'
 const Reel = ({ open, closeReel, moveCursor }) => {
   useEffect(() => {
     const closeOnEscapeKey = (e) => {
-      moveCursor(e)
-      return e.key === 'Escape' ? closeReel() : null
+      if (e.key === 'Escape') {
+        moveCursor(e)
+        closeReel()
+      }
     }
     document.body.addEventListener('keydown', closeOnEscapeKey)
     return () => {
