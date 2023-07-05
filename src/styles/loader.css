@@ -16,7 +16,7 @@
 }
 
 #content span {
-  font-family: 'PT Mono', 'Lucida Console', 'Courier New', monospace;
+  font-family: var(--mono-font);
   font-weight: 500;
   opacity: 0.8;
   /* display: none; */

@@ -13,22 +13,11 @@
 }
 
 :root {
-  --accent-color: #ff3121;
-  --background-color: #000;
-  --text-color: #fff;
-  --border-color: #fff;
-  --link-color: #fff;
-  --text-selection-background-color: var(--accent-color);
-  --text-selection-foreground-color: #fff;
+  --serif-font: Benguiat;
+  --mono-font: 'PT Mono', 'Lucida Console', 'Courier New', monospace;
 
-  --border-width: 50px;
-  --nav-padding: 39px;
-  --line-height: 1.5;
-
-  font-family: Benguiat;
-  line-height: var(--line-height);
+  font-family: var(--serif-font);
   font-weight: 400;
-
   color-scheme: light dark;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -77,78 +66,5 @@ a {
 }
 
 .mono {
-  font-family: 'PT Mono', 'Lucida Console', 'Courier New', monospace;
-}
-
-.page {
-  &-enter {
-    opacity: 0;
-
-    &-active {
-      opacity: 1;
-      transition: opacity 400ms;
-      transition-delay: 600ms;
-    }
-  }
-
-  &-exit {
-    opacity: 0;
-
-    &-active {
-      opacity: 1;
-      transition: opacity 400ms;
-    }
-  }
-}
-
-.fade-enter {
-  opacity: 0;
-  transform: translate(0, -25px);
-  z-index: 1;
-}
-.fade-enter.fade-enter-done {
-  opacity: 1;
-  transform: translate(0, 0);
-
-  transition: opacity 600ms ease-out, transform 700ms ease;
-}
-.fade-exit {
-  opacity: 1;
-  transform: translate(0, 0);
-  z-index: 2;
-}
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transform: translate(0, 25px);
-
-  transition: opacity 600ms ease-out, transform 700ms ease;
-}
-
-.swap-enter {
-  filter: blur(15px);
-  opacity: 0;
-}
-.swap-enter.swap-enter-active {
-  opacity: 1;
-  filter: blur(0px);
-
-  transition: all 500ms ease-in-out;
-  transition-delay: 250ms;
-}
-.swap-exit {
-  filter: blur(0px);
-  opacity: 1;
-}
-.swap-exit.swap-exit-active {
-  filter: blur(15px);
-  opacity: 0;
-  transition: all 600ms ease-in-out;
-}
-
-.modal-enter-done {
-  opacity: 1;
-  pointer-events: auto;
-}
-.modal-exit {
-  opacity: 0;
+  font-family: var(--mono-font);
 }

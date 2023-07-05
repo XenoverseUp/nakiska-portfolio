@@ -1,0 +1,50 @@
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, -25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-done {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 600ms ease-out, transform 700ms ease;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+  z-index: 2;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 25px);
+
+  transition: opacity 600ms ease-out, transform 700ms ease;
+}
+
+.swap-enter {
+  filter: blur(15px);
+  opacity: 0;
+}
+.swap-enter.swap-enter-active {
+  opacity: 1;
+  filter: blur(0px);
+
+  transition: all 500ms ease-in-out;
+  transition-delay: 250ms;
+}
+.swap-exit {
+  filter: blur(0px);
+  opacity: 1;
+}
+.swap-exit.swap-exit-active {
+  filter: blur(15px);
+  opacity: 0;
+  transition: all 600ms ease-in-out;
+}
+
+.modal-enter-done {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-exit {
+  opacity: 0;
+}

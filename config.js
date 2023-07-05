@@ -7,15 +7,15 @@ import FollowerType from './src/utils/FollowerTypes'
 export const SEO = {
   title: 'Nakiska Shaikh Portfolio',
   description: 'Pretty cool portfolio.',
-  canonical: 'http://example.com/path/to/page',
+  canonical: 'http://nakiska-shaikh.com',
   meta: {
     charset: 'utf-8',
     keywords: 'design,coding,figma,ui,ux',
     author: 'Can Durmus',
     openGraph: {
-      title: '',
-      url: '',
-      description: '',
+      title: 'Nakiska Shaikh Portfolio',
+      url: 'http://nakiska-shaikh.com',
+      description: 'Pretty cool portfolio.',
       image: '',
     },
   },
@@ -29,8 +29,10 @@ export const SEO = {
 const INTRO_ANIMATION_SPEED = 9
 export const ANIMATION_SPEED_MULTIPLIER = 5 / INTRO_ANIMATION_SPEED
 
-/** @type {number} in miliseconds                       - Changes the duration of swapper in the /clients and /services.   DEFAULT: 2000 */
+/** @type {number} in miliseconds                       - Changes the duration of swapper in the /clients and /services.   DEFAULT: 1750 */
 export const SWAP_DURATION = 1750
+/** @type {number} in miliseconds                       - Changes the duration of fade in animation of reel sheet.         DEFAULT: 200 */
+export const REEL_FADE_DURATION = 200
 
 /* * * * * * * * *
  * CSS VARIABLES *

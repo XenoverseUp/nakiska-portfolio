@@ -5,6 +5,7 @@ import App from './App'
 
 import './styles/font.css'
 import './styles/global.scss'
+import './styles/transition.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>

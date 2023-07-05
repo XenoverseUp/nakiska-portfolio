@@ -58,11 +58,11 @@ const Cursor = () => {
       !(
         (e.target.dataset.cursorHover && !e.target.dataset.closeReel) ||
         e.target.dataset.cursorMail ||
-        e.target.dataset.cursorText
+        e.target.dataset.cursorText ||
+        e.target.dataset.cursorStatic
       ) &&
       !isHighlighting()
     ) {
-      toggleReel()
       animateCursor(
         e,
         cursor,
@@ -72,6 +72,7 @@ const Cursor = () => {
         close,
         !reelOpen
       )
+      toggleReel()
     }
   }
 
@@ -113,7 +114,7 @@ const Cursor = () => {
           height={hasCursor ? 30 : '2rem'}
         />
       </div>
-      <Reel open={reelOpen} {...{ hasCursor, closeReel }} />
+      <Reel open={reelOpen} {...{ hasCursor, closeReel, moveCursor }} />
     </Fragment>
   )
 }

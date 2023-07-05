@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { SEO, Colors, Layout } from '../../config'
+import { SEO, Colors, Layout, REEL_FADE_DURATION } from '../../config'
 import kebabize from 'utils/kebabize'
 
 const useConfig = () => {
@@ -24,6 +24,10 @@ const useConfig = () => {
         `--${kebabize(key)}`,
         config[key]
       )
+    )
+    document.documentElement.style.setProperty(
+      '--reel-fade-duration',
+      `${REEL_FADE_DURATION}ms`
     )
   }, [])
 }
