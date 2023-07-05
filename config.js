@@ -45,6 +45,7 @@ export const REEL_FADE_DURATION = 200
  * @property {string} textColor                         - Primary text color of the portfolio.                             DEFAULT: '#fff'
  * @property {string} borderColor                       - Color of page border.                                            DEFAULT: '#fff'
  * @property {string} linkColor                         - Color of anchor tags, a.k.a links.                               DEFAULT: '#fff'
+ * @property {string} lineHeight                         - Color of anchor tags, a.k.a links.                               DEFAULT: '#fff'
  * @property {string} textSelectionForegroundColor      - Foreground color of mouse text selection.                        DEFAULT: '#fff'
  * @property {string} textSelectionBackgroundColor      - Background color of mouse text selection.                        DEFAULT: Colors.accentColor
  */
@@ -56,6 +57,7 @@ export const Colors = {
   textColor: '#fff',
   borderColor: '#fff',
   linkColor: '#fff',
+  lineHeight: 1.5,
   textSelectionForegroundColor: '#fff',
   get textSelectionBackgroundColor() {
     return this.accentColor
