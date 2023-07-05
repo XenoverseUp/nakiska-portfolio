@@ -77,6 +77,7 @@ export const animateCursor = (
     })
 
     gsap.to(follower.current, {
+      opacity: 1,
       xPercent: 150,
       yPercent: -250,
     })
@@ -122,6 +123,7 @@ export const animateCursor = (
     })
 
     gsap.to(follower.current, {
+      opacity: 1,
       xPercent: 130,
       yPercent: -220,
     })
@@ -151,6 +153,7 @@ export const animateCursor = (
     })
 
     gsap.to(follower.current, {
+      opacity: 0.3,
       xPercent: 130,
       yPercent: -220,
     })
@@ -168,7 +171,7 @@ export const animateCursor = (
       },
     })
 
-    gsap.set(follower.current, {
+    gsap.to(follower.current, {
       opacity: 1,
     })
 
@@ -245,6 +248,7 @@ const hoverCursor = (
   })
 
   gsap.to(follower.current, {
+    opacity: 1,
     xPercent: -50,
     yPercent: -50,
     duration: 0.5,
