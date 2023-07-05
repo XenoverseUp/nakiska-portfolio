@@ -12,6 +12,7 @@ import isHighlighting from '../utils/isHighlighting'
 import cx from 'cx'
 import Reel from './Reel'
 import useHasCursor from '../hooks/useHasCursor'
+import Close from '../icons/Close'
 
 const Cursor = () => {
   const cursor = useRef(null)
@@ -58,8 +59,7 @@ const Cursor = () => {
       !(
         (e.target.dataset.cursorHover && !e.target.dataset.closeReel) ||
         e.target.dataset.cursorMail ||
-        e.target.dataset.cursorText ||
-        e.target.dataset.cursorStatic
+        e.target.dataset.cursorText
       ) &&
       !isHighlighting()
     ) {
@@ -86,21 +86,7 @@ const Cursor = () => {
         className={cx(styles.cursor, { [styles.coarse]: !hasCursor.current })}
         {...(!hasCursor.current && { onClick: openReel })}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className={styles.close}
-          ref={close}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
+        <Close className={styles.close} ref={close} />
         <span ref={cursorText} className={styles.cursorText}>
           {CursorConfig.playReel}
         </span>
