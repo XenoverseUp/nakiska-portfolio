@@ -14,5 +14,5 @@
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  padding: 1rem;
+  padding: var(--border-width);
 }
