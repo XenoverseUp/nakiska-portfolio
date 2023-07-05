@@ -3,11 +3,7 @@ import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import useEventListener from 'hooks/useEventListener'
 import { Cursor as CursorConfig } from '../../config'
 import { ReactComponent as Star } from 'assets/svg/Star.svg'
-import {
-  animateCursor,
-  animateCursorFollower,
-  setup,
-} from '../animations/cursor'
+import { animateCursor, setup } from '../animations/cursor'
 import isHighlighting from '../utils/isHighlighting'
 import cx from 'cx'
 import Reel from './Reel'
@@ -33,10 +29,7 @@ const Cursor = () => {
 
   useEffect(() => {
     if (hasCursor.current) setup(cursor, follower, followerTween, close)
-    // else {
-    //   animateCursorFollower(follower)
-    //   document.body.style.cursor = 'auto'
-    // }
+    else document.body.style.cursor = 'auto'
   }, [])
 
   const moveCursor = useCallback(

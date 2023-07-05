@@ -210,15 +210,6 @@ export const animateCursor = (
   }
 }
 
-export const animateCursorFollower = (follower) => {
-  gsap.to(follower.current, {
-    rotate: 360,
-    duration: 4,
-    repeat: -1,
-    ease: 'none',
-  })
-}
-
 const defaultCursor = (
   cursor,
   follower,
