@@ -5,25 +5,25 @@ import FollowerType from './src/utils/FollowerTypes'
  * * * * * * * * * * */
 
 export const SEO = {
-  title: 'Nakiska Shaikh Portfolio',
+  title: 'Nakiska Shaikh | Creative Director & Interaction Designer',
   description: 'Pretty cool portfolio.',
-  canonical: 'http://nakiska-shaikh.com',
+  canonical: 'http://nakiskashaikh.com',
   meta: {
     charset: 'utf-8',
     keywords: 'design,coding,figma,ui,ux',
     author: 'Can Durmus',
     openGraph: {
-      title: 'Nakiska Shaikh Portfolio',
-      url: 'http://nakiska-shaikh.com',
+      title: 'Nakiska Shaikh | Creative Director & Interaction Designer',
+      url: 'http://nakiskashaikh.com',
       description: 'Pretty cool portfolio.',
       image: '',
     },
   },
 }
 
-/* * * * * * * * * * * * *
- * JAVASCRIPT VARIABLES  *
- * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * *
+ * JAVASCRIPT ANIMATION VARIABLES  *
+ * * * * * * * * * * * * * * * * * */
 
 /** @type {number}                                      - Changes the speed of intro animation.                            DEFAULT: 9 */
 const INTRO_ANIMATION_SPEED = 9
@@ -120,6 +120,13 @@ export const navigation = {
   '/contact': 'contact',
   '/services': 'services',
   '/clients': 'clients',
+}
+
+/**---------*/
+
+export const reel = {
+  url: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
+  title: 'Nakiska Shaikh',
 }
 
 /**---------*/

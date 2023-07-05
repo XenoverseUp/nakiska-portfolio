@@ -5,8 +5,10 @@ import {
   Container,
   useMediaPlaying,
 } from '@react-av/core'
-import { useLayoutEffect } from 'react'
+import { useCallback, useLayoutEffect } from 'react'
+import useHasCursor from '../hooks/useHasCursor'
 import styles from '../styles/components/ReelPlayer.module.scss'
+import cx from 'cx'
 
 function PlayPauseButton() {
   const [playing, setPlaying] = useMediaPlaying()
@@ -17,14 +19,17 @@ function PlayPauseButton() {
     <button
       className={styles.playButton}
       data-cursor-hover
-      onClick={() => setPlaying(!playing)}
+      onClick={(e) => {
+        e.stopPropagation()
+        setPlaying(!playing)
+      }}
     >
       {!playing ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-6 h-6"
+          className={styles.play}
         >
           <path
             fillRule="evenodd"
@@ -50,17 +55,32 @@ function PlayPauseButton() {
   )
 }
 
-const ReelPlayer = () => {
+const ReelPlayer = ({ src, title, closeReel }) => {
+  const hasCursor = useHasCursor()
+
+  const close = useCallback(
+    (e) => {
+      closeReel()
+    },
+    [closeReel]
+  )
+
   return (
     <Root>
       <Container className={styles.container}>
-        <Video
-          className={styles.video}
-          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-        />
+        <Video className={styles.video} {...{ src }} />
       </Container>
-      <Viewport inactiveClassName={styles.inactive} className={styles.viewport}>
-        <PlayPauseButton />
+      <Viewport
+        inactiveClassName={cx(styles.inactive, {
+          [styles.coarse]: !hasCursor.current,
+        })}
+        className={styles.viewport}
+        {...(!hasCursor.current && { onClick: close })}
+      >
+        <div className={styles.controls}>
+          <PlayPauseButton />
+          <p>{title}</p>
+        </div>
       </Viewport>
     </Root>
   )

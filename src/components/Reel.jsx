@@ -2,10 +2,10 @@ import { CSSTransition } from 'react-transition-group'
 import Portal from './Portal'
 import styles from '@sc/Reel.module.scss'
 import { useEffect } from 'react'
-import { REEL_FADE_DURATION } from '../../config'
+import { REEL_FADE_DURATION, reel } from '../../config'
 import ReelPlayer from './ReelPlayer'
 
-const Reel = ({ open, closeReel, hasCursor, moveCursor }) => {
+const Reel = ({ open, closeReel, moveCursor }) => {
   useEffect(() => {
     const closeOnEscapeKey = (e) => {
       moveCursor(e)
@@ -25,11 +25,8 @@ const Reel = ({ open, closeReel, hasCursor, moveCursor }) => {
         unmountOnExit
         classNames="modal"
       >
-        <section
-          className={styles.main}
-          {...(!hasCursor.current && { onClick: closeReel })}
-        >
-          <ReelPlayer />
+        <section className={styles.main}>
+          <ReelPlayer src={reel.url} title={reel.title} closeReel={closeReel} />
         </section>
       </CSSTransition>
     </Portal>

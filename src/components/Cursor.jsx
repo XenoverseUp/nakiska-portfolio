@@ -114,7 +114,7 @@ const Cursor = () => {
           height={hasCursor ? 30 : '2rem'}
         />
       </div>
-      <Reel open={reelOpen} {...{ hasCursor, closeReel, moveCursor }} />
+      <Reel open={reelOpen} {...{ closeReel, moveCursor }} />
     </Fragment>
   )
 }
