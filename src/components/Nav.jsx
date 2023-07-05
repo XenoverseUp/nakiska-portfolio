@@ -10,6 +10,7 @@ const Nav = () => {
       <NavLink
         to="/"
         data-cursor-hover
+        aria-label="Home"
         className={({ isActive }) =>
           cx(styles.logo, { [styles.active]: isActive })
         }
