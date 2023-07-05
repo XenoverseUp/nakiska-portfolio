@@ -37,7 +37,7 @@ const ReelPlayer = ({ src, title, closeReel }) => {
   return (
     <Root>
       <Container className={styles.container}>
-        <Video className={styles.video} {...{ src }} />
+        <Video preload="none" className={styles.video} {...{ src }} />
       </Container>
       <Viewport
         inactiveClassName={cx(styles.inactive, {
