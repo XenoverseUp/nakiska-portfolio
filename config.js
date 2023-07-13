@@ -29,8 +29,8 @@ export const SEO = {
 const INTRO_ANIMATION_SPEED = 9
 export const ANIMATION_SPEED_MULTIPLIER = 5 / INTRO_ANIMATION_SPEED
 
-/** @type {number} in miliseconds                       - Changes the duration of swapper in the /clients and /services.   DEFAULT: 1750 */
-export const SWAP_DURATION = 1750
+/** @type {number} in miliseconds                       - Changes the duration of swapper in the /clients and /services.   DEFAULT: 1000 */
+export const SWAP_DURATION = 1000
 /** @type {number} in miliseconds                       - Changes the duration of fade in animation of reel sheet.         DEFAULT: 200 */
 export const REEL_FADE_DURATION = 200
 
@@ -48,6 +48,7 @@ export const REEL_FADE_DURATION = 200
  * @property {string} lineHeight                         - Color of anchor tags, a.k.a links.                               DEFAULT: '#fff'
  * @property {string} textSelectionForegroundColor      - Foreground color of mouse text selection.                        DEFAULT: '#fff'
  * @property {string} textSelectionBackgroundColor      - Background color of mouse text selection.                        DEFAULT: Colors.accentColor
+ * @property {string} navFontSize                       - Background color of mouse text selection.                        DEFAULT: Colors.accentColor
  */
 
 /** @type {Colors} */
@@ -62,6 +63,7 @@ export const Colors = {
   get textSelectionBackgroundColor() {
     return this.accentColor
   },
+  navFontSize: '12px',
 }
 
 /**---------*/
@@ -137,6 +139,7 @@ export const reel = {
  * @typedef  {Object} Cursor
  * @property {string} playReel                          - Play reel cursor text.                                            DEFAULT: 'play reel'
  * @property {string} mailMe                            - E-mail hover cursor text.                                         DEFAULT: 'mail me'
+ * @property {string} mailMeBackground                            - E-mail hover cursor text.                                         DEFAULT: 'mail me'
  * @property {number} cursorFlexibility                 - The flexibility of cursor. The Lower = Springy, Rigid             DEFAULT: 0.2
  * @property {number} followerFlexibility               - The flexibility of follower.                                      DEFAULT: 0.3
  * @property {FollowerType} followerType
@@ -147,6 +150,8 @@ export const reel = {
 export const Cursor = {
   playReel: 'play reel',
   mailMe: 'mail me',
+  mailMeBackground: '#fff',
+  mailMeForeground: '#000',
   cursorFlexibility: 0.2,
   followerFlexibility: 0.3,
   followerType: FollowerType.STAR,

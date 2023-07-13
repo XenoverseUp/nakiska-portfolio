@@ -4,7 +4,8 @@
   & > * {
     position: absolute;
     z-index: 5;
-    font-size: 12pt;
+    font-size: var(--nav-font-size);
+    cursor: none;
 
     &:nth-child(2) {
       right: calc(var(--border-width) + var(--nav-padding));
@@ -46,10 +47,10 @@
     content: '';
     transition: ease 250ms all;
     position: absolute;
-    bottom: -1.5px;
+    bottom: -0.25em;
     width: 0;
     right: 0;
-    height: 2px;
+    height: 1px;
     background-color: var(--accent-color);
   }
 
@@ -68,11 +69,6 @@
   }
 }
 
-.active {
-  font-weight: bold;
-  pointer-events: none;
-
-  &::after {
-    width: 100%;
-  }
+.active::after {
+  width: 100%;
 }

@@ -18,12 +18,13 @@
     text-decoration: solid;
     @extend .content;
     padding: none;
+    cursor: none;
 
     &::after {
       content: '';
       position: absolute;
-      bottom: 10px;
-      height: 3px;
+      bottom: 0.2em;
+      height: 1px;
       left: 0;
       right: 0;
       background-color: var(--accent-color);

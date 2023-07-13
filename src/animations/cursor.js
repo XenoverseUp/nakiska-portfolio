@@ -65,32 +65,28 @@ export const animateCursor = (
     })
 
     gsap.set(cursorText.current, {
-      color: '#000',
+      color: Cursor.mailMeForeground,
     })
 
     gsap.to(cursor.current, {
       opacity: 1,
-      background: '#fff',
+      background: Cursor.mailMeBackground,
       width: 108,
       height: 108,
       duration: 0.2,
     })
 
     gsap.to(follower.current, {
-      opacity: 1,
+      opacity: 0,
       xPercent: 150,
       yPercent: -250,
+      duration: 0.4,
     })
 
     gsap.to(cursorText.current, {
       scale: 1,
       opacity: 1,
       duration: 0.3,
-    })
-
-    gsap.to(followerTween.current, {
-      timeScale: 3,
-      overwrite: 'auto',
     })
 
     gsap.to(cursorText.current, {
@@ -116,16 +112,16 @@ export const animateCursor = (
 
     gsap.to(cursor.current, {
       opacity: 1,
-      background: 'rgba(255, 255, 255, 0.1)', // 'transparent',
-      width: 96,
-      height: 96,
+      background: 'transparent',
+      width: 108,
+      height: 108,
       duration: 0.2,
     })
 
     gsap.to(follower.current, {
       opacity: 1,
-      xPercent: 130,
-      yPercent: -220,
+      xPercent: 150,
+      yPercent: -250,
     })
 
     gsap.to(followerTween.current, {
@@ -153,7 +149,7 @@ export const animateCursor = (
     })
 
     gsap.to(follower.current, {
-      opacity: 0.3,
+      opacity: 0,
       xPercent: 130,
       yPercent: -220,
     })
@@ -232,7 +228,6 @@ const hoverCursor = (
 
   gsap.to(cursor.current, {
     opacity: 0,
-    background: '#fff',
     width: 25,
     height: 25,
     duration: 0.3,

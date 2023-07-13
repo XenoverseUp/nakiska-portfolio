@@ -6,7 +6,7 @@ import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import Cursor from 'components/Cursor'
 import PageLayout from 'components/Layout'
 import PageTransition from 'components/PageTransition'
-import IntroAnimation from 'components/IntroAnimation'
+import StarAnimation from 'components/StarAnimation'
 import routes from 'shared/routes'
 
 import 'utils/ArrayPrototypes'
@@ -15,33 +15,30 @@ import useConfig from './hooks/useConfig'
 gsap.registerPlugin(MotionPathPlugin)
 
 function App() {
+  useConfig()
+
   const location = useLocation()
   const transitionRef = useRef(null)
   const curtain = useRef(null)
-  const curtainShadow = useRef(null)
-
-  useConfig()
+  const stars = useRef(null)
 
   const onExit = () => {
     gsap.context(() => {
-      gsap.to(['#curtain-shadow', '#curtain'], {
-        height: '100%',
-        duration: 0.8,
-        ease: Expo.easeInOut,
-        delay: -0.1,
-        stagger: 0.05,
+      gsap.to('#curtain', {
+        opacity: 1,
+        duration: 0.4,
       })
     }, transitionRef)
   }
 
   const onEntered = () => {
     gsap.context(() => {
-      gsap.to(['#curtain', '#curtain-shadow'], {
-        height: 0,
-        duration: 0.7,
-        stagger: 0.075,
+      gsap.set('#curtain', {
+        opacity: 0,
       })
     }, transitionRef)
+
+    stars.current.runAnimation()
   }
 
   return (
@@ -63,12 +60,11 @@ function App() {
           </CSSTransition>
         </TransitionGroup>
       </PageLayout>
-      <IntroAnimation />
+      <StarAnimation ref={stars} />
       <PageTransition
         ref={transitionRef}
         internalRefs={{
           curtain,
-          curtainShadow,
         }}
       />
     </>

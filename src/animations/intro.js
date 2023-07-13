@@ -3,6 +3,7 @@ import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import { ANIMATION_SPEED_MULTIPLIER } from '../../config'
 
 gsap.registerPlugin(MotionPathPlugin)
+let timelines = []
 
 export const setup = () => {
   gsap.set(['.star', '.bubble'], {
@@ -37,8 +38,13 @@ export const animate = () => {
   animateBubbles()
 }
 
+export const reset = () => {
+  setup()
+  timelines.forEach((tl) => tl.seek(1 * ANIMATION_SPEED_MULTIPLIER))
+}
+
 const animateStars = () => {
-  gsap
+  timelines[0] = gsap
     .timeline()
     .to('#star-0', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -65,7 +71,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[1] = gsap
     .timeline()
     .to('#star-1', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -94,7 +100,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[2] = gsap
     .timeline()
     .to('#star-2', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -121,7 +127,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[3] = gsap
     .timeline()
     .to('#star-3', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -150,7 +156,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[4] = gsap
     .timeline()
     .to('#star-4', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -179,7 +185,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[5] = gsap
     .timeline()
     .to('#star-5', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -208,7 +214,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[6] = gsap
     .timeline()
     .to('#star-6', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -235,7 +241,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[7] = gsap
     .timeline()
     .to('#star-7', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -262,7 +268,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[8] = gsap
     .timeline()
     .to('#star-8', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -289,7 +295,7 @@ const animateStars = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[9] = gsap
     .timeline()
     .to('#star-9', {
       delay: 1 * ANIMATION_SPEED_MULTIPLIER,
@@ -318,7 +324,7 @@ const animateStars = () => {
 }
 
 const animateBubbles = () => {
-  gsap
+  timelines[10] = gsap
     .timeline()
     .to('#bubble-0', {
       duration: 5.5 * ANIMATION_SPEED_MULTIPLIER,
@@ -336,7 +342,7 @@ const animateBubbles = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[11] = gsap
     .timeline()
     .to('#bubble-1', {
       duration: 5 * ANIMATION_SPEED_MULTIPLIER,
@@ -354,7 +360,7 @@ const animateBubbles = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[12] = gsap
     .timeline()
     .to('#bubble-2', {
       duration: 6 * ANIMATION_SPEED_MULTIPLIER,
@@ -372,7 +378,7 @@ const animateBubbles = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[13] = gsap
     .timeline()
     .to('#bubble-3', {
       duration: 6 * ANIMATION_SPEED_MULTIPLIER,
@@ -390,7 +396,7 @@ const animateBubbles = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[14] = gsap
     .timeline()
     .to('#bubble-4', {
       duration: 5.5 * ANIMATION_SPEED_MULTIPLIER,
@@ -408,7 +414,7 @@ const animateBubbles = () => {
       display: 'none',
     })
 
-  gsap
+  timelines[15] = gsap
     .timeline()
     .to('#bubble-5', {
       duration: 5 * ANIMATION_SPEED_MULTIPLIER,

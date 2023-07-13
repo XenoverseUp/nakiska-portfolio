@@ -32,7 +32,6 @@ const Swapper = ({ items }) => {
         <CSSTransition
           unmountOnExit
           data-cursor-hover
-          data-swapper-hover
           key={index}
           classNames="swap"
           timeout={1000}

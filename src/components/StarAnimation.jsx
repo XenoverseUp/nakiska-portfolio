@@ -1,12 +1,18 @@
-import { Fragment, useEffect, useRef } from 'react'
-import styles from '@sc/IntroAnimation.module.scss'
+import {
+  Fragment,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react'
+import styles from '@sc/StarAnimation.module.scss'
 import cx from 'cx'
 import Paths from 'components/Paths'
 import gsap from 'gsap'
-import { setup, animate } from 'animations/intro'
+import { setup, animate, reset } from 'animations/intro'
 
-const IntroAnimation = () => (
-  <AnimationBoundary>
+const StarAnimation = (_, ref) => (
+  <AnimationBoundary ref={ref}>
     <ViewBoundary>
       {new Array(6).fill(null).map((_, i) => (
         <svg
@@ -44,20 +50,31 @@ const IntroAnimation = () => (
   </AnimationBoundary>
 )
 
-const AnimationBoundary = ({ children }) => {
+const AnimationBoundary = forwardRef(({ children }, ref) => {
   const boundary = useRef(null)
 
+  useImperativeHandle(
+    ref,
+    () => ({
+      runAnimation: () => {
+        reset()
+      },
+    }),
+    []
+  )
+
   useEffect(() => {
-    gsap.context(() => {
+    let ctx = gsap.context(() => {
       setup()
       animate()
+
+      return () => ctx.revert()
     }, boundary)
   }, [])
   return <div ref={boundary}>{children}</div>
-}
-
+})
 const ViewBoundary = ({ children }) => (
   <section className={styles.viewBoundary}>{children}</section>
 )
 
-export default IntroAnimation
+export default forwardRef(StarAnimation)
