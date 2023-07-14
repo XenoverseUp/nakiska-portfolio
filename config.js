@@ -79,6 +79,17 @@ export const Layout = {
   navPadding: '2.75rem',
 }
 
+/**---------*/
+/**
+ * @typedef  {Object} CursorCSS
+ * @property {number} crossLineWidth               - The flexibility of follower.                                      DEFAULT: 1px
+ */
+
+/** @type {CursorCSS} */
+export const CursorCSS = {
+  crossLineWidth: '1px',
+}
+
 /* * * * * * * * *
  * PAGE CONTENT  *
  * * * * * * * * */

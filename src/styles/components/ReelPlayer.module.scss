@@ -13,6 +13,36 @@
   }
 }
 
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 5;
+  width: 5rem;
+  aspect-ratio: 1 / 1;
+
+  &:not(.coarse) {
+    display: none;
+  }
+
+  span {
+    --rotate: 45deg;
+    height: var(--cross-line-width);
+    width: 30px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 9999px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(var(--rotate));
+
+    &:last-child {
+      --rotate: -45deg;
+    }
+  }
+}
+
 .viewport {
   display: flex;
   align-items: flex-end;
@@ -64,7 +94,7 @@
 .playButton {
   background-color: rgba(0 0 0 / 0);
   outline: none;
-  border: 2px solid #fff;
+  border: none;
   border-radius: 50%;
   height: 3rem;
   aspect-ratio: 1 / 1;
@@ -76,11 +106,58 @@
 
   svg {
     pointer-events: none;
-    width: 1.5rem;
+    width: max(16px, 1.5rem);
     aspect-ratio: 1 / 1;
 
     &.play {
       transform: translateX(0.1rem);
     }
+  }
+}
+
+.sliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  width: 100%;
+  height: 20px;
+}
+
+.sliderTrack {
+  background-color: rgba(255 255 255 / 0.25);
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  height: 3px;
+}
+
+.bufferedRange {
+  position: absolute;
+  background-color: rgba(255 255 255 / 0.25);
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.sliderRange {
+  position: absolute;
+  background-color: white;
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.sliderThumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    circle,
+    var(--accent-color) 40%,
+    rgba(0, 0, 0, 1) 40%
+  );
+
+  &:focus {
+    outline: none;
   }
 }

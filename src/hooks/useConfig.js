@@ -1,5 +1,11 @@
 import { useEffect } from 'react'
-import { SEO, Colors, Layout, REEL_FADE_DURATION } from '../../config'
+import {
+  SEO,
+  Colors,
+  Layout,
+  REEL_FADE_DURATION,
+  CursorCSS,
+} from '../../config'
 import kebabize from 'utils/kebabize'
 
 const useConfig = () => {
@@ -18,7 +24,7 @@ const useConfig = () => {
         <meta property="og:image" content="${SEO.meta.openGraph.image}" />
         `
 
-    const config = { ...Colors, ...Layout }
+    const config = { ...Colors, ...Layout, ...CursorCSS }
     Object.keys(config).forEach((key) =>
       document.documentElement.style.setProperty(
         `--${kebabize(key)}`,

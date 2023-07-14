@@ -8,7 +8,6 @@ import isHighlighting from '../utils/isHighlighting'
 import cx from 'cx'
 import Reel from './Reel'
 import useHasCursor from '../hooks/useHasCursor'
-import Close from '../icons/Close'
 
 const Cursor = () => {
   const cursor = useRef(null)
@@ -34,6 +33,7 @@ const Cursor = () => {
 
   const moveCursor = useCallback(
     (e) =>
+      hasCursor.current &&
       animateCursor(
         e,
         cursor,
@@ -79,7 +79,10 @@ const Cursor = () => {
         className={cx(styles.cursor, { [styles.coarse]: !hasCursor.current })}
         {...(!hasCursor.current && { onClick: openReel })}
       >
-        <Close className={styles.close} ref={close} />
+        <div className={styles.close} ref={close}>
+          <span />
+          <span />
+        </div>
         <span ref={cursorText} className={styles.cursorText}>
           {CursorConfig.playReel}
         </span>

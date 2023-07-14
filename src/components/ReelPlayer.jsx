@@ -11,16 +11,33 @@ import styles from '../styles/components/ReelPlayer.module.scss'
 import cx from 'cx'
 import Play from '../icons/Play'
 import Pause from '../icons/Pause'
+import { Track, Range, Thumb } from '@radix-ui/react-slider'
+import { ProgressBarRoot, ProgressBarBufferedRanges } from '@react-av/sliders'
 
-function PlayPauseButton() {
+function ProgressBar() {
+  return (
+    <ProgressBarRoot className={styles.sliderRoot} data-cursor-hover>
+      <Track className={styles.sliderTrack} data-cursor-hover>
+        <ProgressBarBufferedRanges
+          className={styles.bufferedRange}
+          data-cursor-hover
+        />
+        <Range className={styles.sliderRange} data-cursor-hover />
+      </Track>
+      <Thumb className={styles.sliderThumb} data-cursor-hover />
+    </ProgressBarRoot>
+  )
+}
+
+const PlayPauseButton = () => {
   const [playing, setPlaying] = useMediaPlaying()
 
   useLayoutEffect(() => setPlaying(true), [])
 
   return (
     <button
-      className={styles.playButton}
       data-cursor-hover
+      className={styles.playButton}
       onClick={(e) => {
         e.stopPropagation()
         setPlaying(!playing)
@@ -31,7 +48,7 @@ function PlayPauseButton() {
   )
 }
 
-const ReelPlayer = ({ src, title, closeReel }) => {
+export default function ReelPlayer({ src, closeReel }) {
   const hasCursor = useHasCursor()
 
   return (
@@ -46,13 +63,21 @@ const ReelPlayer = ({ src, title, closeReel }) => {
         className={styles.viewport}
         {...(!hasCursor.current && { onClick: closeReel })}
       >
-        <div className={styles.controls}>
+        <div
+          className={cx(styles.close, { [styles.coarse]: !hasCursor.current })}
+        >
+          <span />
+          <span />
+        </div>
+        <div
+          className={styles.controls}
+          data-cursor-hover
+          {...(!hasCursor.current && { onClick: (e) => e.stopPropagation() })}
+        >
           <PlayPauseButton />
-          <p>{title}</p>
+          <ProgressBar />
         </div>
       </Viewport>
     </Root>
   )
 }
-
-export default ReelPlayer

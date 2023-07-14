@@ -5,7 +5,6 @@
     position: absolute;
     z-index: 5;
     font-size: var(--nav-font-size);
-    cursor: none;
 
     &:nth-child(2) {
       right: calc(var(--border-width) + var(--nav-padding));

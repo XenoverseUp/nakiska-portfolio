@@ -26,7 +26,7 @@ function App() {
     gsap.context(() => {
       gsap.to('#curtain', {
         opacity: 1,
-        duration: 0.4,
+        duration: 0.3,
       })
     }, transitionRef)
   }

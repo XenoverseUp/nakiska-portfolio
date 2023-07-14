@@ -4,6 +4,7 @@ import styles from '@sc/Reel.module.scss'
 import { useEffect } from 'react'
 import { REEL_FADE_DURATION, reel } from '../../config'
 import ReelPlayer from './ReelPlayer'
+import { useDebugValue } from 'react'
 
 const Reel = ({ open, closeReel, moveCursor }) => {
   useEffect(() => {
@@ -19,6 +20,8 @@ const Reel = ({ open, closeReel, moveCursor }) => {
     }
   }, [closeReel])
 
+  useDebugValue('amk')
+
   return (
     <Portal id="reel">
       <CSSTransition
@@ -28,7 +31,7 @@ const Reel = ({ open, closeReel, moveCursor }) => {
         classNames="modal"
       >
         <section className={styles.main}>
-          <ReelPlayer src={reel.url} title={reel.title} closeReel={closeReel} />
+          <ReelPlayer src={reel.url} closeReel={closeReel} />
         </section>
       </CSSTransition>
     </Portal>

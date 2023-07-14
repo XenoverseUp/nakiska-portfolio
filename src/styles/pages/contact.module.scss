@@ -18,7 +18,6 @@
     text-decoration: solid;
     @extend .content;
     padding: none;
-    cursor: none;
 
     &::after {
       content: '';

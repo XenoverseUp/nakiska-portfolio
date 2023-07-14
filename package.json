@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-visually-hidden": "^1.0.3",
     "@react-av/core": "^0.0.4",
+    "@react-av/sliders": "^0.0.4",
     "gsap": "^3.11.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
