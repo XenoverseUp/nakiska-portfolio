@@ -24,12 +24,9 @@ const useConfig = () => {
         <meta property="og:image" content="${SEO.meta.openGraph.image}" />
         `
 
-    const config = { ...Colors, ...Layout, ...CursorCSS }
-    Object.keys(config).forEach((key) =>
-      document.documentElement.style.setProperty(
-        `--${kebabize(key)}`,
-        config[key]
-      )
+    const CSS = { ...Colors, ...Layout, ...CursorCSS }
+    Object.keys(CSS).forEach((key) =>
+      document.documentElement.style.setProperty(`--${kebabize(key)}`, CSS[key])
     )
     document.documentElement.style.setProperty(
       '--reel-fade-duration',

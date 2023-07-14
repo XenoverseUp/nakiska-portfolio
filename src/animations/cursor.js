@@ -1,5 +1,6 @@
 import { gsap } from 'gsap'
 import { Cursor } from '../../config'
+import FollowerType from '../utils/FollowerTypes'
 
 export const setup = (cursor, follower, followerTween, close) => {
   gsap.set(cursor.current, {
@@ -227,11 +228,24 @@ const hoverCursor = (
   cursorText.current.innerText = ''
 
   gsap.to(cursor.current, {
-    opacity: 0,
+    opacity: Cursor.followerType == FollowerType.NONE ? 1 : 0,
     width: 25,
     height: 25,
+    background: '#fff',
     duration: 0.3,
   })
+
+  gsap.to(cursorText.current, {
+    opacity: 1,
+    duration: 0.3,
+  })
+
+  gsap.to(closeIcon.current, {
+    opacity: 0,
+    duration: 0.3,
+  })
+
+  if (Cursor.followerType == FollowerType.NONE) return
 
   gsap.to(follower.current, {
     opacity: 1,
@@ -243,16 +257,6 @@ const hoverCursor = (
   gsap.to(followerTween.current, {
     timeScale: e.target.dataset.swapperHover ? 5 : 3,
     overwrite: 'auto',
-  })
-
-  gsap.to(cursorText.current, {
-    opacity: 1,
-    duration: 0.3,
-  })
-
-  gsap.to(closeIcon.current, {
-    opacity: 0,
-    duration: 0.3,
   })
 }
 

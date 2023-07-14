@@ -25,7 +25,7 @@ export const SEO = {
  * JAVASCRIPT ANIMATION VARIABLES  *
  * * * * * * * * * * * * * * * * * */
 
-/** @type {number}                                      - Changes the speed of intro animation.                            DEFAULT: 9 */
+/** @type {number}                                      - Changes the speed of page animation.                             DEFAULT: 9 */
 const INTRO_ANIMATION_SPEED = 9
 export const ANIMATION_SPEED_MULTIPLIER = 5 / INTRO_ANIMATION_SPEED
 
@@ -141,7 +141,6 @@ export const navigation = {
 
 export const reel = {
   url: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-  title: 'Nakiska Shaikh',
 }
 
 /**---------*/
@@ -150,11 +149,11 @@ export const reel = {
  * @typedef  {Object} Cursor
  * @property {string} playReel                          - Play reel cursor text.                                            DEFAULT: 'play reel'
  * @property {string} mailMe                            - E-mail hover cursor text.                                         DEFAULT: 'mail me'
- * @property {string} mailMeBackground                            - E-mail hover cursor text.                                         DEFAULT: 'mail me'
+ * @property {string} mailMeBackground                  - E-mail hover cursor text.                                         DEFAULT: 'mail me'
  * @property {number} cursorFlexibility                 - The flexibility of cursor. The Lower = Springy, Rigid             DEFAULT: 0.2
  * @property {number} followerFlexibility               - The flexibility of follower.                                      DEFAULT: 0.3
  * @property {FollowerType} followerType
- * @property {string} starFill
+ * @property {React.FC} customFollower
  */
 
 /** @type {Cursor} */
@@ -165,8 +164,22 @@ export const Cursor = {
   mailMeForeground: '#000',
   cursorFlexibility: 0.2,
   followerFlexibility: 0.3,
-  followerType: FollowerType.STAR,
-  starFill: Colors.accentColor,
+  followerType: FollowerType.CUSTOM,
+  customFollower: ({ width, height }) => (
+    <svg
+      {...{ width, height }}
+      viewBox="0 0 238 235"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M119 16.651C90.0232 -18.2228 33.691 8.90535 42.8896 53.3039C-2.44265 54.2155 -16.3556 115.172 24.0918 135.662C-3.45959 171.673 35.5235 220.556 76.7619 201.708C87.7381 245.701 150.262 245.701 161.238 201.708C202.477 220.556 241.46 171.673 213.908 135.662C254.356 115.172 240.443 54.2155 195.111 53.3039C204.309 8.90532 147.977 -18.2228 119 16.651Z"
+        fill={Colors.accentColor}
+      />
+    </svg>
+  ),
 }
 
 /**---------*/

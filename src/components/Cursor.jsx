@@ -2,12 +2,13 @@ import styles from '@sc/Cursor.module.scss'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import useEventListener from 'hooks/useEventListener'
 import { Cursor as CursorConfig } from '../../config'
-import { ReactComponent as Star } from 'assets/svg/Star.svg'
 import { animateCursor, setup } from '../animations/cursor'
 import isHighlighting from '../utils/isHighlighting'
 import cx from 'cx'
 import Reel from './Reel'
 import useHasCursor from '../hooks/useHasCursor'
+import FollowerType from '../utils/FollowerTypes'
+import Switch, { Case, Default } from './SwitchCase'
 
 const Cursor = () => {
   const cursor = useRef(null)
@@ -87,15 +88,22 @@ const Cursor = () => {
           {CursorConfig.playReel}
         </span>
       </div>
-      <div
-        ref={follower}
-        className={cx(styles.follower, { [styles.coarse]: !hasCursor.current })}
-      >
-        <Star
-          width={hasCursor ? 30 : '2rem'}
-          height={hasCursor ? 30 : '2rem'}
-        />
-      </div>
+
+      <Switch condition={CursorConfig.followerType}>
+        <Case value={FollowerType.CUSTOM}>
+          <div
+            ref={follower}
+            className={cx(styles.follower, {
+              [styles.coarse]: !hasCursor.current,
+            })}
+          >
+            <CursorConfig.customFollower
+              width={hasCursor ? 30 : '2rem'}
+              height={hasCursor ? 30 : '2rem'}
+            />
+          </div>
+        </Case>
+      </Switch>
       <Reel open={reelOpen} {...{ closeReel, moveCursor }} />
     </Fragment>
   )

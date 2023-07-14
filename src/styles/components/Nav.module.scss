@@ -5,6 +5,7 @@
     position: absolute;
     z-index: 5;
     font-size: var(--nav-font-size);
+    color: var(--text-color);
 
     &:nth-child(2) {
       right: calc(var(--border-width) + var(--nav-padding));
@@ -57,6 +58,7 @@
     width: 100%;
     left: 0;
     right: unset;
+    pointer-events: none;
   }
 }
 
@@ -65,9 +67,11 @@
     width: 100%;
     left: 0;
     right: unset;
+    pointer-events: none;
   }
 }
 
 .active::after {
   width: 100%;
+  pointer-events: none;
 }
