@@ -45,10 +45,10 @@ export const REEL_FADE_DURATION = 200
  * @property {string} textColor                         - Primary text color of the portfolio.                             DEFAULT: '#fff'
  * @property {string} borderColor                       - Color of page border.                                            DEFAULT: '#fff'
  * @property {string} linkColor                         - Color of anchor tags, a.k.a links.                               DEFAULT: '#fff'
- * @property {string} lineHeight                         - Color of anchor tags, a.k.a links.                               DEFAULT: '#fff'
+ * @property {string} lineHeight                         - Color of anchor tags, a.k.a links.                              DEFAULT: '#fff'
  * @property {string} textSelectionForegroundColor      - Foreground color of mouse text selection.                        DEFAULT: '#fff'
  * @property {string} textSelectionBackgroundColor      - Background color of mouse text selection.                        DEFAULT: Colors.accentColor
- * @property {string} navFontSize                       - Background color of mouse text selection.                        DEFAULT: Colors.accentColor
+ * @property {string} navFontSize                       - Font size of the links in the navigation bar.                    DEFAULT: 12px
  */
 
 /** @type {Colors} */
@@ -82,7 +82,7 @@ export const Layout = {
 /**---------*/
 /**
  * @typedef  {Object} CursorCSS
- * @property {number} crossLineWidth               - The flexibility of follower.                                      DEFAULT: 1px
+ * @property {number} crossLineWidth               - The width of close reel "X".                                      DEFAULT: 1px
  */
 
 /** @type {CursorCSS} */
@@ -139,6 +139,12 @@ export const navigation = {
 
 /**---------*/
 
+/**
+ * @typedef {Object} Reel
+ * @property {string} url                               - URL of the reel video.
+ */
+
+/** @type {Reel} */
 export const reel = {
   url: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
 }
@@ -152,8 +158,23 @@ export const reel = {
  * @property {string} mailMeBackground                  - E-mail hover cursor text.                                         DEFAULT: 'mail me'
  * @property {number} cursorFlexibility                 - The flexibility of cursor. The Lower = Springy, Rigid             DEFAULT: 0.2
  * @property {number} followerFlexibility               - The flexibility of follower.                                      DEFAULT: 0.3
- * @property {FollowerType} followerType
- * @property {React.FC} customFollower
+ * @property {FollowerType} followerType                - Type of the follower. CUSTOM and NONE are available.              DEFAULT: FollowerType.Custom
+ * @property {React.FC} customFollower                  - If the type is picked as CUSTOM, this svg will be used.
+ *
+ * IMPORTANT!
+ * While filling up the `customFollower` prop, make sure the SVG you passed is a valid JSX (https://svg2jsx.com/).
+ * Also, remove predefined and hardcoded width and height and replace them with `{...{ width, height }}`.
+ *
+ *
+ * AN EASIER WAY:
+ * If you don't want to convert a huge SVG to JSX, alternatively you can put an SVG in the root and import it at top of this file as such:
+ *
+ * `import { ReactComponent as Happy } from "./happy.svg"`
+ *
+ * After that in the customFollower field, you can use it:
+ *
+ * `customFollower: ({ width, height }) => <Happy {...{ width, height }} />,`
+ *
  */
 
 /** @type {Cursor} */
