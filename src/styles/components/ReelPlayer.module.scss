@@ -105,6 +105,7 @@
   min-height: 36px;
 
   svg {
+    fill: white;
     pointer-events: none;
     width: max(16px, 1.5rem);
     aspect-ratio: 1 / 1;
@@ -130,7 +131,7 @@
   position: relative;
   flex-grow: 1;
   border-radius: 9999px;
-  height: 3px;
+  height: 1px;
 }
 
 .bufferedRange {

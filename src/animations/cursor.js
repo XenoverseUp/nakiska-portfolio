@@ -269,9 +269,9 @@ const reelCursor = (cursor, follower, cursorText, followerTween, closeIcon) => {
 
   gsap.to(cursor.current, {
     opacity: 1,
+    width: 108,
+    height: 108,
     background: 'transparent',
-    width: 96,
-    height: 96,
     duration: 0.2,
   })
 
