@@ -1,4 +1,5 @@
 import FollowerType from './src/utils/FollowerTypes'
+import { ReactComponent as CursorSVG } from './cursor.svg'
 
 /* * * * * * * * * * *
  * SEO OPTIMIZATION  *
@@ -21,6 +22,8 @@ export const SEO = {
   },
 }
 
+export const secret = `This is a secret text.`
+
 /* * * * * * * * * * * * * * * * * *
  * JAVASCRIPT ANIMATION VARIABLES  *
  * * * * * * * * * * * * * * * * * */
@@ -30,7 +33,7 @@ const INTRO_ANIMATION_SPEED = 9
 export const ANIMATION_SPEED_MULTIPLIER = 5 / INTRO_ANIMATION_SPEED
 
 /** @type {number} in miliseconds                       - Changes the duration of swapper in the /clients and /services.   DEFAULT: 1000 */
-export const SWAP_DURATION = 1000
+export const SWAP_DURATION = 750
 /** @type {number} in miliseconds                       - Changes the duration of fade in animation of reel sheet.         DEFAULT: 200 */
 export const REEL_FADE_DURATION = 200
 
@@ -187,21 +190,23 @@ export const Cursor = {
   followerFlexibility: 0.3,
   followerType: FollowerType.CUSTOM,
   customFollower: ({ width, height }) => (
-    <svg
-      {...{ width, height }}
-      viewBox="0 0 238 235"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M119 16.651C90.0232 -18.2228 33.691 8.90535 42.8896 53.3039C-2.44265 54.2155 -16.3556 115.172 24.0918 135.662C-3.45959 171.673 35.5235 220.556 76.7619 201.708C87.7381 245.701 150.262 245.701 161.238 201.708C202.477 220.556 241.46 171.673 213.908 135.662C254.356 115.172 240.443 54.2155 195.111 53.3039C204.309 8.90532 147.977 -18.2228 119 16.651Z"
-        fill={Colors.accentColor}
-      />
-    </svg>
+    <CursorSVG {...{ width, height }} fill={Colors.accentColor} />
   ),
 }
+
+/* <svg
+  {...{ width, height }}
+  viewBox="0 0 238 235"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M119 16.651C90.0232 -18.2228 33.691 8.90535 42.8896 53.3039C-2.44265 54.2155 -16.3556 115.172 24.0918 135.662C-3.45959 171.673 35.5235 220.556 76.7619 201.708C87.7381 245.701 150.262 245.701 161.238 201.708C202.477 220.556 241.46 171.673 213.908 135.662C254.356 115.172 240.443 54.2155 195.111 53.3039C204.309 8.90532 147.977 -18.2228 119 16.651Z"
+    fill={Colors.accentColor}
+  />
+</svg> */
 
 /**---------*/
 

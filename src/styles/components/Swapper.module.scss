@@ -8,10 +8,11 @@
   height: 10.5rem;
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   transform: translateY(2rem);
 
   span {
+    pointer-events: none;
     position: relative;
     width: fit-content;
     height: 100px;

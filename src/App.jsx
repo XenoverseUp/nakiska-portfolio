@@ -11,6 +11,7 @@ import routes from 'shared/routes'
 
 import 'utils/ArrayPrototypes'
 import useConfig from './hooks/useConfig'
+import { secret } from '../config'
 
 gsap.registerPlugin(MotionPathPlugin)
 
@@ -40,6 +41,8 @@ function App() {
 
     stars.current.runAnimation()
   }
+
+  useEffect(() => console.log(secret), [])
 
   return (
     <>
