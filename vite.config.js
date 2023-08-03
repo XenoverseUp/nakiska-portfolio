@@ -20,6 +20,7 @@ export default defineConfig({
       components: path.resolve(__dirname, './src', 'components'),
       src: path.resolve(__dirname, './src'),
       cx: path.resolve(__dirname, './src', 'utils', 'classnames.js'),
+      config: path.resolve(__dirname, 'config.jsx'),
     },
   },
   plugins: [

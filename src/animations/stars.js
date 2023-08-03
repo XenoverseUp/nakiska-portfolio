@@ -1,6 +1,6 @@
 import gsap, { Power3, Power2, Power4 } from 'gsap'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
-import { ANIMATION_SPEED_MULTIPLIER } from '../../config'
+import { ANIMATION_SPEED_MULTIPLIER } from 'config'
 
 gsap.registerPlugin(MotionPathPlugin)
 let timelines = []

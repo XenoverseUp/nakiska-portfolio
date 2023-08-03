@@ -2,7 +2,7 @@ import { ReactComponent as Logo } from 'assets/svg/logo.svg'
 import { NavLink } from 'react-router-dom'
 import styles from '@sc/Nav.module.scss'
 import cx from 'cx'
-import { navigation } from '@/config'
+import { navigation } from 'config'
 
 const Nav = () => {
   return (

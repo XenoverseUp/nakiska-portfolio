@@ -1,6 +1,6 @@
 import { gsap } from 'gsap'
-import { Cursor } from '../../config'
-import FollowerType from '../utils/FollowerTypes'
+import { Cursor } from 'config'
+import FollowerType from 'utils/FollowerTypes'
 
 export const setup = (cursor, follower, followerTween, close) => {
   gsap.set(cursor.current, {

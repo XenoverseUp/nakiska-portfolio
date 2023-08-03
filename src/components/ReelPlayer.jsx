@@ -6,11 +6,11 @@ import {
   useMediaPlaying,
 } from '@react-av/core'
 import { useLayoutEffect } from 'react'
-import useHasCursor from '../hooks/useHasCursor'
-import styles from '../styles/components/ReelPlayer.module.scss'
+import useHasCursor from 'hooks/useHasCursor'
+import styles from '@sc/ReelPlayer.module.scss'
 import cx from 'cx'
-import Play from '../icons/Play'
-import Pause from '../icons/Pause'
+import Play from '@/src/icons/Play'
+import Pause from '@/src/icons/Pause'
 import { Track, Range, Thumb } from '@radix-ui/react-slider'
 import { ProgressBarRoot, ProgressBarBufferedRanges } from '@react-av/sliders'
 

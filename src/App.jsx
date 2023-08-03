@@ -1,17 +1,21 @@
-import { useEffect, useRef } from 'react'
+import { Fragment, useCallback, useEffect, useRef } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import gsap, { Expo } from 'gsap'
+import gsap from 'gsap'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
+
 import Cursor from 'components/Cursor'
 import PageLayout from 'components/Layout'
-import PageTransition from 'components/PageTransition'
+import Fade from 'components/Fade'
 import StarAnimation from 'components/StarAnimation'
+
+import useConfig from 'hooks/useConfig'
+import { secret } from 'config'
+import { reset } from 'animations/stars'
 import routes from 'shared/routes'
 
 import 'utils/ArrayPrototypes'
-import useConfig from './hooks/useConfig'
-import { secret } from '../config'
 
 gsap.registerPlugin(MotionPathPlugin)
 
@@ -19,33 +23,27 @@ function App() {
   useConfig()
 
   const location = useLocation()
-  const transitionRef = useRef(null)
-  const curtain = useRef(null)
-  const stars = useRef(null)
+  const fade = useRef(null)
 
-  const onExit = () => {
-    gsap.context(() => {
-      gsap.to('#curtain', {
-        opacity: 1,
-        duration: 0.3,
-      })
-    }, transitionRef)
-  }
+  const onExit = useCallback(() => {
+    gsap.to(fade.current, {
+      opacity: 1,
+      duration: 0.3,
+    })
+  }, [])
 
-  const onEntered = () => {
-    gsap.context(() => {
-      gsap.set('#curtain', {
-        opacity: 0,
-      })
-    }, transitionRef)
+  const onEntered = useCallback(() => {
+    gsap.set(fade.current, {
+      opacity: 0,
+    })
 
-    stars.current.runAnimation()
-  }
+    reset()
+  }, [])
 
   useEffect(() => console.log(secret), [])
 
   return (
-    <>
+    <Fragment>
       <Cursor />
       <PageLayout>
         <TransitionGroup component={null}>
@@ -63,14 +61,9 @@ function App() {
           </CSSTransition>
         </TransitionGroup>
       </PageLayout>
-      <StarAnimation ref={stars} />
-      <PageTransition
-        ref={transitionRef}
-        internalRefs={{
-          curtain,
-        }}
-      />
-    </>
+      <Fade ref={fade} />
+      <StarAnimation />
+    </Fragment>
   )
 }
 

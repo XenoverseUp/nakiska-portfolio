@@ -4,7 +4,7 @@ import styles from '@sc/Swapper.module.scss'
 import useIndex from 'hooks/useIndex'
 import useBoolean from 'hooks/useBoolean'
 import useHasCursor from 'hooks/useHasCursor'
-import { SWAP_DURATION } from '@/config'
+import { SWAP_DURATION } from 'config'
 
 const Swapper = ({ items }) => {
   const [index, { increment }] = useIndex({

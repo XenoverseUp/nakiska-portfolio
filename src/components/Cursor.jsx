@@ -1,14 +1,14 @@
 import styles from '@sc/Cursor.module.scss'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import useEventListener from 'hooks/useEventListener'
-import { Cursor as CursorConfig } from '../../config'
-import { animateCursor, setup } from '../animations/cursor'
-import isHighlighting from '../utils/isHighlighting'
+import { Cursor as CursorConfig } from 'config'
+import { animateCursor, setup } from 'animations/cursor'
+import isHighlighting from 'utils/isHighlighting'
 import cx from 'cx'
-import Reel from './Reel'
-import useHasCursor from '../hooks/useHasCursor'
-import FollowerType from '../utils/FollowerTypes'
-import Switch, { Case, Default } from './SwitchCase'
+import Reel from 'components/Reel'
+import useHasCursor from 'hooks/useHasCursor'
+import FollowerType from 'utils/FollowerTypes'
+import When from 'components/helper/When'
 
 const Cursor = () => {
   const cursor = useRef(null)
@@ -88,22 +88,22 @@ const Cursor = () => {
           {CursorConfig.playReel}
         </span>
       </div>
-
-      <Switch condition={CursorConfig.followerType}>
-        <Case value={FollowerType.CUSTOM}>
-          <div
-            ref={follower}
-            className={cx(styles.follower, {
-              [styles.coarse]: !hasCursor.current,
-            })}
-          >
-            <CursorConfig.customFollower
-              width={hasCursor ? 30 : '2rem'}
-              height={hasCursor ? 30 : '2rem'}
-            />
-          </div>
-        </Case>
-      </Switch>
+      <When
+        asChild
+        condition={CursorConfig.followerType === FollowerType.CUSTOM}
+      >
+        <div
+          ref={follower}
+          className={cx(styles.follower, {
+            [styles.coarse]: !hasCursor.current,
+          })}
+        >
+          <CursorConfig.customFollower
+            width={hasCursor ? 30 : '2rem'}
+            height={hasCursor ? 30 : '2rem'}
+          />
+        </div>
+      </When>
       <Reel open={reelOpen} {...{ closeReel, moveCursor }} />
     </Fragment>
   )

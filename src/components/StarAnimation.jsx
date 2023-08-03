@@ -9,10 +9,10 @@ import styles from '@sc/StarAnimation.module.scss'
 import cx from 'cx'
 import Paths from 'components/Paths'
 import gsap from 'gsap'
-import { setup, animate, reset } from 'animations/intro'
+import { setup, animate } from 'animations/stars'
 
-const StarAnimation = (_, ref) => (
-  <AnimationBoundary ref={ref}>
+const StarAnimation = () => (
+  <AnimationBoundary>
     <ViewBoundary>
       {new Array(6).fill(null).map((_, i) => (
         <svg
@@ -50,18 +50,8 @@ const StarAnimation = (_, ref) => (
   </AnimationBoundary>
 )
 
-const AnimationBoundary = forwardRef(({ children }, ref) => {
+const AnimationBoundary = ({ children }) => {
   const boundary = useRef(null)
-
-  useImperativeHandle(
-    ref,
-    () => ({
-      runAnimation: () => {
-        reset()
-      },
-    }),
-    []
-  )
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -72,9 +62,9 @@ const AnimationBoundary = forwardRef(({ children }, ref) => {
     }, boundary)
   }, [])
   return <div ref={boundary}>{children}</div>
-})
+}
 const ViewBoundary = ({ children }) => (
   <section className={styles.viewBoundary}>{children}</section>
 )
 
-export default forwardRef(StarAnimation)
+export default StarAnimation

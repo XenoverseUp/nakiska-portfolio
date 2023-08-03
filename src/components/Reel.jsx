@@ -1,10 +1,9 @@
-import { CSSTransition } from 'react-transition-group'
-import Portal from './Portal'
-import styles from '@sc/Reel.module.scss'
 import { useEffect } from 'react'
-import { REEL_FADE_DURATION, reel } from '../../config'
-import ReelPlayer from './ReelPlayer'
-import { useDebugValue } from 'react'
+import { CSSTransition } from 'react-transition-group'
+import styles from '@sc/Reel.module.scss'
+import Portal from 'components/helper/Portal'
+import ReelPlayer from 'components/ReelPlayer'
+import { REEL_FADE_DURATION, reel } from 'config'
 
 const Reel = ({ open, closeReel, moveCursor }) => {
   useEffect(() => {
@@ -19,8 +18,6 @@ const Reel = ({ open, closeReel, moveCursor }) => {
       document.body.removeEventListener('keydown', closeOnEscapeKey)
     }
   }, [closeReel])
-
-  useDebugValue('amk')
 
   return (
     <Portal id="reel">
