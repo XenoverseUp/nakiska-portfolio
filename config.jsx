@@ -44,6 +44,7 @@ export const REEL_FADE_DURATION = 200
 /**
  * @typedef  {Object} Colors
  * @property {string} accentColor                       - Color of bubbles, link underlines, curtains etc.                 DEFAULT: '#ff3121'
+ * @property {string} browserThemeColor                 - Theme color of browser (borders etc.).                           DEFAULT: '#fff'
  * @property {string} backgroundColor                   - Background color of the portfolio.                               DEFAULT: '#000'
  * @property {string} textColor                         - Primary text color of the portfolio.                             DEFAULT: '#fff'
  * @property {string} borderColor                       - Color of page border.                                            DEFAULT: '#fff'
@@ -57,6 +58,7 @@ export const REEL_FADE_DURATION = 200
 /** @type {Colors} */
 export const Colors = {
   accentColor: '#ff3121',
+  browserThemeColor: '#fff',
   backgroundColor: '#000',
   textColor: '#fff',
   borderColor: '#fff',

@@ -1,11 +1,5 @@
 import { useEffect } from 'react'
-import {
-  SEO,
-  Colors,
-  Layout,
-  REEL_FADE_DURATION,
-  CursorCSS,
-} from '../../config'
+import { SEO, Colors, Layout, REEL_FADE_DURATION, CursorCSS } from 'config'
 import kebabize from 'utils/kebabize'
 
 const useConfig = () => {
@@ -17,7 +11,7 @@ const useConfig = () => {
         <meta name='keywords' content='${SEO.meta.keywords}'/>
         <meta name='canonical' content='${SEO.canonical}'/>
         <meta name='author' content='${SEO.meta.author}'/>
-        <meta name="theme-color" content="${Colors.accentColor}" />
+        <meta name="theme-color" content="${Colors.browserThemeColor}" />
         <meta property="og:title" content="${SEO.meta.openGraph.title}" />
         <meta property="og:url" content="${SEO.meta.openGraph.url}" />
         <meta property="og:description" content="${SEO.meta.openGraph.description}" />
