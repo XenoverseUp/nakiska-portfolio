@@ -54,7 +54,12 @@ export default function ReelPlayer({ src, closeReel }) {
   return (
     <Root>
       <Container className={styles.container}>
-        <Video preload="none" className={styles.video} {...{ src }} />
+        <Video
+          playsInline
+          preload="none"
+          className={styles.video}
+          {...{ src }}
+        />
       </Container>
       <Viewport
         inactiveClassName={cx(styles.inactive, {
