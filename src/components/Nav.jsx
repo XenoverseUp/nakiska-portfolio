@@ -27,7 +27,7 @@ const Nav = () => {
             cx('mono', styles.link, { [styles.active]: isActive })
           }
         >
-          {navigation[key]}
+          <span data-cursor-hover>{navigation[key]}</span>
         </NavLink>
       ))}
     </nav>
